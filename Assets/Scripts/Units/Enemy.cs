@@ -22,4 +22,12 @@ public class Enemy : Unit
     private void Update() {
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        GameObject collisionGameObject = collision.collider.gameObject;
+        if(collisionGameObject.TryGetComponent(out Unit unit)) {
+            unit.TakeDmg(_attackPower);
+            Destroy(gameObject);
+        }
+    }
 }
