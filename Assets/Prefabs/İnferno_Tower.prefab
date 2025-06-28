@@ -141,11 +141,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _goldOnDeath: 15
   _baseHealth: 40
-  _respawnTime: 20
+  _respawnTime: 25
   _attackPower: 0
   range: 4
   damagePerSecond: 1
-  damageIncreasePerSecond: 10
+  damageIncreasePerSecond: 1
   cdDuration: 1
   laserRenderer: {fileID: 3281064815674894375}
   baseTarget: {fileID: 0}
