@@ -10,44 +10,62 @@ public class InfernoTower : Tower
     public Transform baseTarget;
     private Enemy currentTarget;
     private float currentDamage;
-    private float targetcd = 0f;
+    private float _targetCoolddownPassedTime = 0f;
+
+    [SerializeField] private EnemyInRangeDetection _rangeDetection;
+
+    private bool _canFindNextTarget = true;
 
     void Update() {
-        if(currentTarget == null || !IsInRange(currentTarget) || currentTarget.IsDead()) {
-            StopLaser();
-            currentTarget = null;
-
-            if(targetcd > 0) {
-                targetcd -= Time.deltaTime;
-                return;
-            }
-
-            FindTarget();
-            currentDamage = damagePerSecond;
-        }
-
         if(currentTarget != null) {
-            DamageTarget();
-            DrawLaser();
-
-            if(currentTarget.IsDead()) {
-                currentTarget = null;
-                targetcd = cdDuration;
-            }
+            CheckCurrentTargetDeadOrOutOfRange();
         }
+        UpdateTargetinCooldown();
+        StopLaser();
+        FindTarget();
+        DamageTarget();
+        Debug.Log(_canFindNextTarget);
     }
 
+    private void UpdateTargetinCooldown() {
+        _targetCoolddownPassedTime = _targetCoolddownPassedTime + Time.deltaTime;
+        if(cdDuration > _targetCoolddownPassedTime) {
+            return;
+        }
+        _canFindNextTarget = true;
+        return;
+    }
+    private void StopLaser() {
+        if(currentTarget == null) {
+            StopDrawingLaser();
+        }
+    }
+    private void CheckCurrentTargetDeadOrOutOfRange() {
+        if(!_rangeDetection.IsInRange(currentTarget) || currentTarget.IsDead()) {
+            currentTarget = null;
+            currentDamage = damagePerSecond;
+            _targetCoolddownPassedTime = 0;
+            _canFindNextTarget = false;
+        }
+    }
     void DamageTarget() {
+        if(currentTarget == null) {
+            return;
+        }
+        DrawLaser();
         currentTarget.TakeDamage(currentDamage * Time.deltaTime);
         currentDamage += damageIncreasePerSecond * Time.deltaTime;
+        CheckCurrentTargetDeadOrOutOfRange();
     }
 
     void FindTarget() {
-        Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+        if(_canFindNextTarget == false || currentTarget != null) {
+            return;
+        }
         float closestToBase = Mathf.Infinity;
         Enemy mostAdvancedEnemy = null;
 
-        foreach(var enemy in enemies) {
+        foreach(var enemy in _rangeDetection.EnemiesInRange) {
             float distToBase = Vector2.Distance(enemy.transform.position,baseTarget.position);
             float distToTower = Vector2.Distance(transform.position,enemy.transform.position);
 
@@ -59,11 +77,6 @@ public class InfernoTower : Tower
 
         currentTarget = mostAdvancedEnemy;
     }
-
-    bool IsInRange(Enemy enemy) {
-        return Vector2.Distance(transform.position,enemy.transform.position) <= range;
-    }
-
     void DrawLaser() {
         if(laserRenderer != null && currentTarget != null) {
             laserRenderer.enabled = true;
@@ -72,7 +85,7 @@ public class InfernoTower : Tower
         }
     }
 
-    void StopLaser() {
+    void StopDrawingLaser() {
         if(laserRenderer != null)
             laserRenderer.enabled = false;
     }
