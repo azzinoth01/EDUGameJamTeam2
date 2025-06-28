@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InfernoTower : MonoBehaviour
+public class InfernoTower : Tower
 {
     public float range = 5f;
     public float damagePerSecond = 5f;

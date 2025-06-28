@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BomberTower : MonoBehaviour
+public class BomberTower : Tower
 {
     public GameObject bombPrefab;
     public Transform firePoint;
@@ -10,42 +10,35 @@ public class BomberTower : MonoBehaviour
     private float fireCooldown = 0f;
     private Enemy currentTarget;
 
-    void Update()
-    {
+    void Update() {
         fireCooldown -= Time.deltaTime;
 
-        if (currentTarget == null || !IsInRange(currentTarget))
+        if(currentTarget == null || !IsInRange(currentTarget))
             FindTarget();
 
-        if (currentTarget != null && fireCooldown <= 0f)
-        {
+        if(currentTarget != null && fireCooldown <= 0f) {
             Shoot();
             fireCooldown = 1f / fireRate;
         }
     }
 
-    void Shoot()
-    {
-        GameObject bomb = Instantiate(bombPrefab, firePoint.position, Quaternion.identity);
+    void Shoot() {
+        GameObject bomb = Instantiate(bombPrefab,firePoint.position,Quaternion.identity);
         bomb.GetComponent<Bomb>().SetTarget(currentTarget.transform);
     }
 
-    bool IsInRange(Enemy enemy)
-    {
-        return Vector2.Distance(transform.position, enemy.transform.position) <= range;
+    bool IsInRange(Enemy enemy) {
+        return Vector2.Distance(transform.position,enemy.transform.position) <= range;
     }
 
-    void FindTarget()
-    {
+    void FindTarget() {
         Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
         float closestDist = Mathf.Infinity;
         Enemy closestEnemy = null;
 
-        foreach (Enemy enemy in enemies)
-        {
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
-            if (dist < closestDist && dist <= range)
-            {
+        foreach(Enemy enemy in enemies) {
+            float dist = Vector2.Distance(transform.position,enemy.transform.position);
+            if(dist < closestDist && dist <= range) {
                 closestDist = dist;
                 closestEnemy = enemy;
             }

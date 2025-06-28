@@ -8,7 +8,7 @@ public class GameInstance
     private MovePaths _movePaths;
     private Player _player;
     private Transform _currentCheckPointPosition;
-
+    private RespawnHandler _respawnHandler;
 
     public static GameInstance Instance {
         get {
@@ -46,6 +46,16 @@ public class GameInstance
 
         set {
             _currentCheckPointPosition = value;
+        }
+    }
+
+    public RespawnHandler RespawnHandler {
+        get {
+            return _respawnHandler;
+        }
+
+        set {
+            _respawnHandler = value;
         }
     }
 
