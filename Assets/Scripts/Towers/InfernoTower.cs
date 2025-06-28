@@ -10,45 +10,36 @@ public class InfernoTower : MonoBehaviour
     private Enemy currentTarget;
     private float currentDamage;
 
-    void Update()
-    {
-        if (currentTarget == null || !IsInRange(currentTarget))
-        {
+    void Update() {
+        if(currentTarget == null || !IsInRange(currentTarget)) {
             FindTarget();
             currentDamage = damagePerSecond;
         }
 
-        if (currentTarget != null)
-        {
+        if(currentTarget != null) {
             DamageTarget();
             DrawLaser();
         }
-        else
-        {
+        else {
             StopLaser();
         }
     }
 
-    void DamageTarget()
-    {
-        if (currentTarget != null)
-        {
-            currentTarget.TakeDamage(currentDamage * Time.deltaTime);
+    void DamageTarget() {
+        if(currentTarget != null) {
+            currentTarget.TakeDmg(currentDamage * Time.deltaTime);
             currentDamage += damageIncreasePerSecond * Time.deltaTime;
         }
     }
 
-    void FindTarget()
-    {
+    void FindTarget() {
         Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
         float closestDistance = Mathf.Infinity;
         Enemy closestEnemy = null;
 
-        foreach (var enemy in enemies)
-        {
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
-            if (dist < closestDistance && dist <= range)
-            {
+        foreach(var enemy in enemies) {
+            float dist = Vector2.Distance(transform.position,enemy.transform.position);
+            if(dist < closestDistance && dist <= range) {
                 closestDistance = dist;
                 closestEnemy = enemy;
             }
@@ -57,25 +48,20 @@ public class InfernoTower : MonoBehaviour
         currentTarget = closestEnemy;
     }
 
-    bool IsInRange(Enemy enemy)
-    {
-        return Vector2.Distance(transform.position, enemy.transform.position) <= range;
+    bool IsInRange(Enemy enemy) {
+        return Vector2.Distance(transform.position,enemy.transform.position) <= range;
     }
 
-    void DrawLaser()
-    {
-        if (laserRenderer != null && currentTarget != null)
-        {
+    void DrawLaser() {
+        if(laserRenderer != null && currentTarget != null) {
             laserRenderer.enabled = true;
-            laserRenderer.SetPosition(0, transform.position);
-            laserRenderer.SetPosition(1, currentTarget.transform.position);
+            laserRenderer.SetPosition(0,transform.position);
+            laserRenderer.SetPosition(1,currentTarget.transform.position);
         }
     }
 
-    void StopLaser()
-    {
-        if (laserRenderer != null)
-        {
+    void StopLaser() {
+        if(laserRenderer != null) {
             laserRenderer.enabled = false;
         }
     }

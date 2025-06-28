@@ -1,6 +1,6 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Splines;
-using System.Collections;
 
 [RequireComponent(typeof(SplineAnimate))]
 public class Enemy : Unit
@@ -9,7 +9,6 @@ public class Enemy : Unit
     private SplineAnimate _animate;
 
     [SerializeField] private float _moveSpeed = 3f;
-    public float health = 100f;
 
     private float originalSpeed;
 
@@ -17,8 +16,7 @@ public class Enemy : Unit
     private Coroutine freezeRoutine;
     private Coroutine poisonRoutine;
 
-    private void Start()
-    {
+    private void Start() {
         _movePath = GameInstance.Instance.MovePaths.GetRandomMovePath();
         _animate = GetComponent<SplineAnimate>();
         _animate.Container = _movePath;
@@ -30,34 +28,19 @@ public class Enemy : Unit
         _animate.Play();
     }
 
-    public void TakeDamage(float amount)
-    {
-        health -= amount;
-        if (health <= 0f)
-            Die();
-    }
-
-    public bool IsDead()
-    {
-        return health <= 0f;
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
+    public bool IsDead() {
+        return _health <= 0;
     }
 
     // Freeze (dondurma)
-    public void Freeze(float duration)
-    {
-        if (freezeRoutine != null)
+    public void Freeze(float duration) {
+        if(freezeRoutine != null)
             StopCoroutine(freezeRoutine);
 
         freezeRoutine = StartCoroutine(FreezeRoutine(duration));
     }
 
-    IEnumerator FreezeRoutine(float duration)
-    {
+    IEnumerator FreezeRoutine(float duration) {
         float prevSpeed = _animate.MaxSpeed;
 
         _animate.MaxSpeed = 0.01f; // pratikte 0 sayılır
@@ -68,42 +51,45 @@ public class Enemy : Unit
     }
 
     // Slow (yavaşlatma)
-    public void Slow(float multiplier, float duration)
-    {
-        if (slowRoutine != null)
+    public void Slow(float multiplier,float duration) {
+        if(slowRoutine != null)
             StopCoroutine(slowRoutine);
 
-        slowRoutine = StartCoroutine(SlowRoutine(multiplier, duration));
+        slowRoutine = StartCoroutine(SlowRoutine(multiplier,duration));
     }
 
-    IEnumerator SlowRoutine(float multiplier, float duration)
-    {
+    IEnumerator SlowRoutine(float multiplier,float duration) {
         _animate.MaxSpeed = originalSpeed * multiplier;
         yield return new WaitForSeconds(duration);
         _animate.MaxSpeed = originalSpeed;
         slowRoutine = null;
     }
 
-    public void ApplyPoison(float dps, float duration)
-    {
-        if (poisonRoutine != null)
+    public void ApplyPoison(int dps,float duration) {
+        if(poisonRoutine != null)
             StopCoroutine(poisonRoutine);
 
-        poisonRoutine = StartCoroutine(PoisonDamageRoutine(dps, duration));
+        poisonRoutine = StartCoroutine(PoisonDamageRoutine(dps,duration));
     }
 
-    IEnumerator PoisonDamageRoutine(float dps, float duration)
-    {
+    IEnumerator PoisonDamageRoutine(float dps,float duration) {
         float elapsed = 0f;
-        while (elapsed < duration)
-        {
-            if (!IsDead())
-                TakeDamage(dps);
+        while(elapsed < duration) {
+            if(!IsDead())
+                TakeDmg(dps);
 
             yield return new WaitForSeconds(1f);
             elapsed += 1f;
         }
 
         poisonRoutine = null;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        GameObject collisionGameObject = collision.collider.gameObject;
+        if(collisionGameObject.TryGetComponent(out Unit unit)) {
+            unit.TakeDmg(_attackPower);
+            Destroy(gameObject);
+        }
     }
 }
