@@ -2,57 +2,73 @@ using UnityEngine;
 
 public class ArrowTower : MonoBehaviour
 {
-    public GameObject arrowPrefab;
-    public Transform firePoint;
+    public GameObject arrow;
+    public Transform Tower;
     public float fireRate = 1f;
     public float range = 5f;
+    public Transform baseTarget;
 
-    private float fireCooldown = 0f;
-    private Enemy currentTarget;
+    private float fireCD = 0f;
+    private Enemy target;
+    private float deadWait = 0f;
+    public float waitTimeAfterKill = 1f;
 
     void Update()
     {
-        fireCooldown -= Time.deltaTime;
+        fireCD -= Time.deltaTime;
 
-        if (currentTarget == null || !IsInRange(currentTarget))
+        if (target == null || target.IsDead() || !IsInRange(target))
         {
+            if (deadWait > 0)
+            {
+                deadWait -= Time.deltaTime;
+                return;
+            }
+
             FindTarget();
         }
 
-        if (currentTarget != null && fireCooldown <= 0f)
+        if (target != null && fireCD <= 0f)
         {
             Shoot();
-            fireCooldown = 1f / fireRate;
+            fireCD = 1f / fireRate;
+
+            if (target.IsDead())
+                deadWait = waitTimeAfterKill;
         }
     }
 
     void Shoot()
     {
-        GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
-        arrow.GetComponent<Arrow>().SetTarget(currentTarget.transform);
-    }
+        if (arrow == null || target == null) return;
 
-    bool IsInRange(Enemy enemy)
-    {
-        return Vector2.Distance(transform.position, enemy.transform.position) <= range;
+        GameObject spawnedArrow = Instantiate(arrow, Tower.position, Quaternion.identity);
+        spawnedArrow.GetComponent<Arrow>().SetTarget(target.transform);
     }
 
     void FindTarget()
     {
-        Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
-        float closestDistance = Mathf.Infinity;
-        Enemy closestEnemy = null;
+        Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+        float nearestToBase = Mathf.Infinity;
+        Enemy chosen = null;
 
-        foreach (var enemy in enemies)
+        foreach (Enemy e in allEnemies)
         {
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
-            if (dist < closestDistance && dist <= range)
+            float distToBase = Vector2.Distance(e.transform.position, baseTarget.position);
+            float distToMe = Vector2.Distance(transform.position, e.transform.position);
+
+            if (distToMe <= range && distToBase < nearestToBase)
             {
-                closestDistance = dist;
-                closestEnemy = enemy;
+                nearestToBase = distToBase;
+                chosen = e;
             }
         }
 
-        currentTarget = closestEnemy;
+        target = chosen;
+    }
+
+    bool IsInRange(Enemy e)
+    {
+        return Vector2.Distance(transform.position, e.transform.position) <= range;
     }
 }

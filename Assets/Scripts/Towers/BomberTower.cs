@@ -6,7 +6,7 @@ public class BomberTower : MonoBehaviour
     public Transform firePoint;
     public float range = 5f;
     public float fireRate = 1f;
-
+    public Transform baseTarget;
     private float fireCooldown = 0f;
     private Enemy currentTarget;
 
@@ -38,19 +38,21 @@ public class BomberTower : MonoBehaviour
     void FindTarget()
     {
         Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
-        float closestDist = Mathf.Infinity;
-        Enemy closestEnemy = null;
+        float closestToBase = Mathf.Infinity;
+        Enemy mostAdvancedEnemy = null;
 
-        foreach (Enemy enemy in enemies)
+        foreach (var enemy in enemies)
         {
-            float dist = Vector2.Distance(transform.position, enemy.transform.position);
-            if (dist < closestDist && dist <= range)
+            float distToBase = Vector2.Distance(enemy.transform.position, baseTarget.position);
+            float distToTower = Vector2.Distance(transform.position, enemy.transform.position);
+
+            if (distToBase < closestToBase && distToTower <= range)
             {
-                closestDist = dist;
-                closestEnemy = enemy;
+                closestToBase = distToBase;
+                mostAdvancedEnemy = enemy;
             }
         }
 
-        currentTarget = closestEnemy;
+        currentTarget = mostAdvancedEnemy;
     }
 }

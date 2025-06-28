@@ -24,32 +24,31 @@ public class Arrow : MonoBehaviour
         }
 
         Vector2 dir = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
+        float distance = speed * Time.deltaTime;
 
-        if(dir.magnitude <= distanceThisFrame) {
+        if(dir.magnitude <= distance) {
             HitTarget();
             return;
         }
 
-        transform.Translate(dir.normalized * distanceThisFrame,Space.World);
+        transform.Translate(dir.normalized * distance,Space.World);
     }
 
     void HitTarget() {
         Enemy e = target.GetComponent<Enemy>();
         if(e != null) {
             e.TakeDmg(damage);
-
             switch(arrowType) {
                 case ArrowType.Slow:
-                    e.Slow(0.5f,2f); // Hızı %50'ye düşür, 2 saniye boyunca
+                    e.Slow(0.5f,2f);
                     break;
 
                 case ArrowType.Poison:
-                    StartCoroutine(ApplyPoison(e,2f,5f)); // 2 saniye boyunca her saniye 5 hasar
+                    StartCoroutine(ApplyPoison(e,2f,5f)); 
                     break;
 
                 case ArrowType.Freeze:
-                    e.Freeze(0.5f); // 0.5 saniye dondur
+                    e.Freeze(0.5f);
                     break;
             }
         }

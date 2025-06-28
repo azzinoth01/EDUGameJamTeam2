@@ -6,11 +6,21 @@ public class Unit : MonoBehaviour
     [SerializeField] protected int _attackPower;
 
 
-    public void TakeDmg(float damage) {
+    public void TakeDmg(float damage)
+    {
 
-        _health = _health - damage;
-        if(_health <= 0) {
-            Destroy(gameObject);
+        _health -= damage;
+        if (_health <= 0)
+        {
+            Death();
         }
+    }
+    public bool IsDead()
+    {
+        return _health <= 0;
+    }
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 }

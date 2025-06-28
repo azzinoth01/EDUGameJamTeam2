@@ -9,13 +9,13 @@ public class Bomb : MonoBehaviour
     public LayerMask enemyLayer;
     public GameObject explosionEffect;
 
-    private Vector2 targetPosition; // Sabit hedef pozisyonu
+    private Vector2 targetPosition;
 
     public void SetTarget(Transform t) {
         if(t != null)
-            targetPosition = t.position; // Sadece ateş edildiği andaki pozisyonu al
+            targetPosition = t.position; 
         else
-            Destroy(gameObject); // Hedef yoksa bombayı yok et
+            Destroy(gameObject); 
     }
 
     void Update() {
