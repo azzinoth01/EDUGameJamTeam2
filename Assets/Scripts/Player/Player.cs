@@ -8,6 +8,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float _incomeTickTimeInSeconds;
     private float _passedTimeGoldIncome;
 
+    public int Gold {
+        get {
+            return _gold;
+        }
+    }
+
     private void Awake() {
         _gold = _startGold;
         GameInstance.Instance.Player = this;
