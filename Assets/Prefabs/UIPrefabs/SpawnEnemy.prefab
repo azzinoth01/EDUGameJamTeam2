@@ -285,3 +285,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyType: {fileID: 7829900552111849067, guid: 5f72f0ce60fba8441b9015eb9b9d3835, type: 3}
+  _spawnCooldownInSeconds: 1

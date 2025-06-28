@@ -151,7 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 20
-  _attackPower: 0
+  _damageToThrone: 0
+  _attackDamage: 0
   _goldOnDeath: 0
 --- !u!61 &135049017
 BoxCollider2D:
@@ -1994,6 +1995,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnEnemyFrame
       objectReference: {fileID: 0}
+    - target: {fileID: 2117124400114057720, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
+      propertyPath: m_text
+      value: 'Skeleton
+
+        Cost 2'
+      objectReference: {fileID: 0}
     - target: {fileID: 3136428288436073679, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2073,6 +2080,18 @@ PrefabInstance:
     - target: {fileID: 3136428288436073679, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018084684508648529, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
+      propertyPath: m_text
+      value: 'Undead Archer
+
+        Cost 3'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695439575958244215, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
+      propertyPath: m_text
+      value: 'Giant Skeleton
+
+        Cost 4'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

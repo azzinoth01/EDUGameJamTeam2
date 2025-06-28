@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6289181499933921839
+--- !u!1001 &448685132849613348
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,31 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: m_Name
-      value: Enemy3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3526287016018566720, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3526287016018566720, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3526287016018566720, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
-      propertyPath: m_Color.r
-      value: 0.027350426
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665550070780585500, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665550070780585500, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4665550070780585500, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
-      propertyPath: m_Color.r
-      value: 0.080822945
+      value: Skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 5882779247340744699, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77,8 +53,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _health
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _moveSpeed
-      value: 3
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _spawnCost
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

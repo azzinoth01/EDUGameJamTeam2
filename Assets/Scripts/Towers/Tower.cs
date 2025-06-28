@@ -12,7 +12,7 @@ public class Tower : MonoBehaviour
     }
 
     private void OnDestroy() {
-        GameInstance.Instance.Player.GetGold(_goldOnDeath);
+        GameInstance.Instance.Player.AddGold(_goldOnDeath);
     }
 
     public void TakeDmg(int damage) {
@@ -23,7 +23,7 @@ public class Tower : MonoBehaviour
     }
 
     private void Death() {
-        GameInstance.Instance.Player.GetGold(_goldOnDeath);
+        GameInstance.Instance.Player.AddGold(_goldOnDeath);
         gameObject.SetActive(false);
         GameInstance.Instance.RespawnHandler.RespawnTower(this,_respawnTime);
     }

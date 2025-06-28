@@ -105,7 +105,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
-  _attackPower: 1
+  _damageToThrone: 1
+  _attackDamage: 0
+  _goldOnDeath: 1
   _moveSpeed: 10
 --- !u!114 &4897730255028671574
 MonoBehaviour:

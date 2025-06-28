@@ -11,11 +11,19 @@ public class Enemy : Unit
 
     [SerializeField] private float _moveSpeed = 3f;
 
+    [SerializeField] private int _spawnCost;
+
     private float originalSpeed;
 
     private Coroutine slowRoutine;
     private Coroutine freezeRoutine;
     private Coroutine poisonRoutine;
+
+    public int SpawnCost {
+        get {
+            return _spawnCost;
+        }
+    }
 
     private void Start() {
         _movePath = GameInstance.Instance.MovePaths.GetRandomMovePath();
@@ -93,7 +101,7 @@ public class Enemy : Unit
     private void OnCollisionEnter2D(Collision2D collision) {
         GameObject collisionGameObject = collision.collider.gameObject;
         if(collisionGameObject.TryGetComponent(out Unit unit)) {
-            unit.TakeDmg(_attackPower);
+            unit.TakeDmg(_damageToThrone);
             Destroy(gameObject);
         }
     }

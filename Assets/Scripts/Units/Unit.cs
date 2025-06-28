@@ -3,7 +3,8 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     [SerializeField] protected float _health;
-    [SerializeField] protected int _attackPower;
+    [SerializeField] protected int _damageToThrone;
+    [SerializeField] protected int _attackDamage;
     [SerializeField] protected int _goldOnDeath;
 
 
@@ -16,7 +17,7 @@ public class Unit : MonoBehaviour
     }
 
     private void Death() {
-        GameInstance.Instance.Player.GetGold(_goldOnDeath);
+        GameInstance.Instance.Player.AddGold(_goldOnDeath);
         Destroy(gameObject);
     }
 }
