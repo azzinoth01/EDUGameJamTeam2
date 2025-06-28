@@ -141,13 +141,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa8c00ae94701c4faa605ede20e909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 5
+  _health: 10
   _goldOnDeath: 0
   _moveSpeed: 1.2
   _spawnCost: 3
   _damageToThrone: 1
   _attackDamage: 2
-  _pushBackDistanceOnCollison: 0
   _speedWhileAttacking: 0.5
   _arrow: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   _fireRate: 1
