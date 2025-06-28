@@ -25,7 +25,7 @@ public class Tower : MonoBehaviour
     public bool IsAlive() {
         return _health > 0;
     }
-    private void Death() {
+    protected virtual void Death() {
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
         gameObject.SetActive(false);
         GameInstance.Instance.RespawnHandler.RespawnTower(this,_respawnTime);

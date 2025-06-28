@@ -112,7 +112,7 @@ public class Enemy : Unit
 
     private void OnCollisionEnter2D(Collision2D collision) {
         GameObject collisionGameObject = collision.collider.gameObject;
-        if(collisionGameObject.TryGetComponent(out Unit unit)) {
+        if(collisionGameObject.TryGetComponent(out Tower unit)) {
             unit.TakeDamage(_damageToThrone);
             Destroy(gameObject);
         }
