@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -7,8 +6,8 @@ public class CheckPoint : MonoBehaviour
 {
     [SerializeField] private bool _setAsStartEnemyPosition;
 
-    [SerializeField]
-    private List<GameObject> _destroyOn
+    //[SerializeField]
+    //private List<GameObject> _destroyOn
 
     private void Awake() {
         if(_setAsStartEnemyPosition) {
