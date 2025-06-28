@@ -39,7 +39,7 @@ public class Bomb : MonoBehaviour
             if(e != null && !damagedEnemies.Contains(e)) {
                 damagedEnemies.Add(e);
                 Debug.Log("🎯 Enemy bulundu: " + e.name);
-                e.TakeDmg(damage);
+                e.TakeDamage(damage);
             }
         }
 

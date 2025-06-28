@@ -27,7 +27,7 @@ public class InfernoTower : Tower
 
     void DamageTarget() {
         if(currentTarget != null) {
-            currentTarget.TakeDmg(currentDamage * Time.deltaTime);
+            currentTarget.TakeDamage(currentDamage * Time.deltaTime);
             currentDamage += damageIncreasePerSecond * Time.deltaTime;
         }
     }

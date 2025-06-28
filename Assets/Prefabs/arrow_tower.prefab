@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _goldOnDeath: 3
-  _baseHealth: 10
+  _baseHealth: 8
   _respawnTime: 30
   arrowPrefab: {fileID: 7905291366695908729, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   firePoint: {fileID: 400881447343345525}

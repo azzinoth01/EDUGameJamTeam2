@@ -13,6 +13,10 @@ public class Enemy : Unit
 
     [SerializeField] private int _spawnCost;
 
+    [SerializeField] private int _damageToThrone;
+    [SerializeField] private int _attackDamage;
+    [SerializeField] private Arrow _arrow;
+
     private float originalSpeed;
 
     private Coroutine slowRoutine;
@@ -89,7 +93,7 @@ public class Enemy : Unit
         float elapsed = 0f;
         while(elapsed < duration) {
             if(!IsDead())
-                TakeDmg(dps);
+                TakeDamage(dps);
 
             yield return new WaitForSeconds(1f);
             elapsed += 1f;
@@ -101,8 +105,24 @@ public class Enemy : Unit
     private void OnCollisionEnter2D(Collision2D collision) {
         GameObject collisionGameObject = collision.collider.gameObject;
         if(collisionGameObject.TryGetComponent(out Unit unit)) {
-            unit.TakeDmg(_damageToThrone);
+            unit.TakeDamage(_damageToThrone);
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(_arrow == null) {
+            return;
+        }
+        Transform target = collision.gameObject.transform;
+        SpawnArrow(target);
+
+    }
+    private void SpawnArrow(Transform target) {
+
+        Arrow arrow = Instantiate(_arrow,transform.position,Quaternion.identity);
+        arrow.SetTarget(target);
+        arrow.Damage = _attackDamage;
+    }
+
 }

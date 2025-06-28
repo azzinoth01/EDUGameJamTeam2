@@ -4,7 +4,7 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private int _goldOnDeath;
     [SerializeField] private int _baseHealth;
-    private int _health;
+    private float _health;
     [SerializeField] private float _respawnTime;
 
     private void Awake() {
@@ -15,7 +15,7 @@ public class Tower : MonoBehaviour
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
     }
 
-    public void TakeDmg(int damage) {
+    public void TakeDamage(float damage) {
         _health = _health - damage;
         if(_health < 0) {
             Death();
