@@ -8,7 +8,7 @@ public abstract class Unit : MonoBehaviour, IHealth
 
     public float Health {
         get {
-            return _currentHealth = _health;
+            return _currentHealth;
         }
     }
 
