@@ -23,7 +23,7 @@ public class InfernoTower : Tower
         StopLaser();
         FindTarget();
         DamageTarget();
-        Debug.Log(_canFindNextTarget);
+
     }
 
     private void UpdateTargetinCooldown() {
@@ -86,5 +86,19 @@ public class InfernoTower : Tower
     void StopDrawingLaser() {
         if(laserRenderer != null)
             laserRenderer.enabled = false;
+    }
+    protected override void Death() {
+        base.Death();
+        StopDrawingLaser();
+    }
+    public override void Respawn() {
+        base.Respawn();
+        ResetTowerState();
+    }
+    void ResetTowerState() {
+        currentTarget = null;
+        currentDamage = damagePerSecond;
+        _targetCoolddownPassedTime = 0f;
+        StopLaser();
     }
 }
