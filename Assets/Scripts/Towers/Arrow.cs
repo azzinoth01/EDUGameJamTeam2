@@ -47,7 +47,7 @@ public class Arrow : MonoBehaviour
         if(_target.TryGetComponent(out Enemy enemy)) {
             enemy.TakeDamage(_damage);
         }
-        else if(_target.TryGetComponent(out Unit unit)) {
+        else if(_target.TryGetComponent(out Tower unit)) {
             unit.TakeDamage(_damage);
         }
 

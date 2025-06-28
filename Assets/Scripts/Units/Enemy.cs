@@ -17,6 +17,11 @@ public class Enemy : Unit
     [SerializeField] private int _attackDamage;
     [SerializeField] private Arrow _arrow;
 
+    [SerializeField] private float _fireRate;
+    private float _fireTime;
+    private float _passedTimeShooting;
+    private Transform _attackTarget;
+
     private float originalSpeed;
 
     private Coroutine slowRoutine;
@@ -27,6 +32,20 @@ public class Enemy : Unit
         get {
             return _spawnCost;
         }
+    }
+
+    public float FireRate {
+        get {
+            return _fireRate;
+        }
+
+        set {
+            _fireRate = value;
+            UpdateFireTime();
+        }
+    }
+    private void UpdateFireTime() {
+        _fireTime = 1f / _fireRate;
     }
 
     private void Start() {
@@ -43,7 +62,23 @@ public class Enemy : Unit
         _animate.StartOffset = distanceOnSpline;
 
         _animate.Play();
+        UpdateFireTime();
     }
+
+    private void Update() {
+        ShootArrow();
+    }
+
+    private void ShootArrow() {
+        _passedTimeShooting = _passedTimeShooting + Time.deltaTime;
+        if(_fireTime > _passedTimeShooting) {
+            return;
+        }
+        _passedTimeShooting = _passedTimeShooting - _fireTime;
+
+        SpawnArrow(_attackTarget);
+    }
+
 
     public bool IsDead() {
         return _health <= 0;
@@ -114,11 +149,34 @@ public class Enemy : Unit
         if(_arrow == null) {
             return;
         }
-        Transform target = collision.gameObject.transform;
-        SpawnArrow(target);
-
+        _attackTarget = collision.gameObject.transform;
     }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if(_arrow == null) {
+            return;
+        }
+        if(_attackTarget == null) {
+            _attackTarget = collision.gameObject.transform;
+        }
+        if(_attackTarget.TryGetComponent(out Tower tower)) {
+            if(tower.IsAlive()) {
+                return;
+            }
+            else {
+                _attackTarget = collision.gameObject.transform;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        _attackTarget = null;
+    }
+
     private void SpawnArrow(Transform target) {
+        if(target == null) {
+            return;
+        }
 
         Arrow arrow = Instantiate(_arrow,transform.position,Quaternion.identity);
         arrow.SetTarget(target);

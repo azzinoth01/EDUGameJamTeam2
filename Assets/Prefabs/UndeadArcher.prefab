@@ -77,6 +77,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _moveSpeed
       value: 1
       objectReference: {fileID: 0}
