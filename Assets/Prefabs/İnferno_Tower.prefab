@@ -143,10 +143,12 @@ MonoBehaviour:
   _baseHealth: 40
   _respawnTime: 20
   _attackPower: 0
-  range: 3
-  damagePerSecond: 1
-  damageIncreasePerSecond: 2
+  range: 5
+  damagePerSecond: 5
+  damageIncreasePerSecond: 15
+  cdDuration: 1
   laserRenderer: {fileID: 3281064815674894375}
+  baseTarget: {fileID: 0}
 --- !u!120 &3281064815674894375
 LineRenderer:
   serializedVersion: 2
