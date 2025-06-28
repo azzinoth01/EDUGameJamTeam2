@@ -31,5 +31,8 @@ public class Player : MonoBehaviour
         _passedTimeGoldIncome = -_incomeTickTimeInSeconds;
         _gold = _gold + _goldPerIncomeTick;
     }
+    public void GetGold(int gold) {
+        _gold = _gold + gold;
+    }
 
 }
