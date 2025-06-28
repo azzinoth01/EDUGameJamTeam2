@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: _unit
       value: 
       objectReference: {fileID: 8229263260682560102}
+    - target: {fileID: 4419191378575454248, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 4665550070780585500, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -143,6 +147,7 @@ MonoBehaviour:
   _spawnCost: 3
   _damageToThrone: 1
   _attackDamage: 2
+  _pushBackDistanceOnCollison: 0
   _speedWhileAttacking: 0.5
   _arrow: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   _fireRate: 1
