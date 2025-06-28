@@ -2,30 +2,31 @@ using UnityEngine;
 
 public class ArrowTower : Tower
 {
-    public GameObject arrowPrefab;
+    public Arrow _arrowPrefab;
     public Transform firePoint;
-    public float fireRate = 1f;
+    public float _fireRate = 1f;
     public float range = 5f;
 
-    private float fireCooldown = 0f;
+    private float _fireCooldown = 0f;
     private Enemy currentTarget;
 
     void Update() {
-        fireCooldown -= Time.deltaTime;
+        _fireCooldown -= Time.deltaTime;
 
         if(currentTarget == null || !IsInRange(currentTarget)) {
             FindTarget();
         }
 
-        if(currentTarget != null && fireCooldown <= 0f) {
+        if(currentTarget != null && _fireCooldown <= 0f) {
             Shoot();
-            fireCooldown = 1f / fireRate;
+            _fireCooldown = 1f / _fireRate;
         }
     }
 
     void Shoot() {
-        GameObject arrow = Instantiate(arrowPrefab,firePoint.position,Quaternion.identity);
-        arrow.GetComponent<Arrow>().SetTarget(currentTarget.transform);
+        Arrow arrow = Instantiate(_arrowPrefab,firePoint.position,Quaternion.identity);
+        arrow.SetTarget(currentTarget.transform);
+        arrow.Damage = _attackPower;
     }
 
     bool IsInRange(Enemy enemy) {

@@ -6,6 +6,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private int _baseHealth;
     private float _health;
     [SerializeField] private float _respawnTime;
+    [SerializeField] protected float _attackPower;
 
     private void Awake() {
         _health = _baseHealth;
