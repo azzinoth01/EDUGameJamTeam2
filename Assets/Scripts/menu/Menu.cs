@@ -2,9 +2,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
-{    public void StartGame()
+
+{
+    public GameObject credit;
+    public GameObject menu;
+    public void StartGame()
     {
-        // "GameScene" senin asıl oyun sahnenin ismi olacak
         SceneManager.LoadScene("MainScene");
     }
 
@@ -12,5 +15,16 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Oyundan çıkılıyor...");
         Application.Quit();
+    }
+    public void ShowCredits()
+    {
+        credit.SetActive(true);
+        menu.SetActive(false);
+    }
+
+    public void HideCredits()
+    {
+        credit.SetActive(false);
+        menu.SetActive(true);
     }
 }
