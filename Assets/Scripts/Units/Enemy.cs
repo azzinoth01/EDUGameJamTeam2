@@ -150,9 +150,29 @@ public class Enemy : Unit
             return;
         }
         _attackTarget = collision.gameObject.transform;
-
-
     }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if(_arrow == null) {
+            return;
+        }
+        if(_attackTarget == null) {
+            _attackTarget = collision.gameObject.transform;
+        }
+        if(_attackTarget.TryGetComponent(out Tower tower)) {
+            if(tower.IsAlive()) {
+                return;
+            }
+            else {
+                _attackTarget = collision.gameObject.transform;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        _attackTarget = null;
+    }
+
     private void SpawnArrow(Transform target) {
         if(target == null) {
             return;

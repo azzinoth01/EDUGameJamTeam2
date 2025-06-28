@@ -22,7 +22,9 @@ public class Tower : MonoBehaviour
             Death();
         }
     }
-
+    public bool IsAlive() {
+        return _health > 0;
+    }
     private void Death() {
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
         gameObject.SetActive(false);
