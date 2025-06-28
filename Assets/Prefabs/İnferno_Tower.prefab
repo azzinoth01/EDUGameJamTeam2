@@ -126,7 +126,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1
+  m_Radius: 0.5
 --- !u!114 &5344633844361609783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,9 +143,9 @@ MonoBehaviour:
   _baseHealth: 40
   _respawnTime: 20
   _attackPower: 0
-  range: 5
-  damagePerSecond: 5
-  damageIncreasePerSecond: 15
+  range: 4
+  damagePerSecond: 1
+  damageIncreasePerSecond: 10
   cdDuration: 1
   laserRenderer: {fileID: 3281064815674894375}
   baseTarget: {fileID: 0}
