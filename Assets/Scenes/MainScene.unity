@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 20
   _attackPower: 0
+  _goldOnDeath: 0
 --- !u!61 &135049017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -272,6 +273,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2225610065177866848, guid: c70f7f1e3f12fcb40a7620fac8246988, type: 3}
   m_PrefabInstance: {fileID: 1501428576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &501779867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2038449158958667838, guid: e9796b96c7d258741b806cc763d4c437, type: 3}
+  m_PrefabInstance: {fileID: 8388417764831792575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1162,6 +1168,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -31.736
       objectReference: {fileID: 0}
+    - target: {fileID: 3788800949124874665, guid: c70f7f1e3f12fcb40a7620fac8246988, type: 3}
+      propertyPath: _destroyOnCheckPointReached.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788800949124874665, guid: c70f7f1e3f12fcb40a7620fac8246988, type: 3}
+      propertyPath: '_destroyOnCheckPointReached.Array.data[0]'
+      value: 
+      objectReference: {fileID: 501779867}
     - target: {fileID: 4689168707630216884, guid: c70f7f1e3f12fcb40a7620fac8246988, type: 3}
       propertyPath: m_Name
       value: Checkpoint (3)

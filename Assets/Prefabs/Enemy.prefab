@@ -105,8 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 1
   _attackPower: 1
+  _goldOnDeath: 1
   _moveSpeed: 1
-  health: 100
 --- !u!114 &7590875511804797625
 MonoBehaviour:
   m_ObjectHideFlags: 0
