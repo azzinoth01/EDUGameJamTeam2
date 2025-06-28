@@ -104,10 +104,14 @@ PrefabInstance:
       propertyPath: _speedWhileAttacking
       value: 0.3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 8229263260682560102}
     - targetCorrespondingSourceObject: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 577581708162319149}
@@ -117,6 +121,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
   m_PrefabInstance: {fileID: 2749951264645713856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8229263260682560102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146429189526742476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa8c00ae94701c4faa605ede20e909a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 5
+  _goldOnDeath: 0
+  _moveSpeed: 1.1
+  _spawnCost: 3
+  _damageToThrone: 1
+  _attackDamage: 2
+  _speedWhileAttacking: 0.1
+  _arrow: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
+  _fireRate: 1
 --- !u!58 &577581708162319149
 CircleCollider2D:
   m_ObjectHideFlags: 0

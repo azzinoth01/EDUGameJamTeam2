@@ -1847,6 +1847,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708512912943078664, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
+      propertyPath: _enemyType
+      value: 
+      objectReference: {fileID: 8229263260682560102, guid: 8a482a43b7563b44b82cd7cc19aa615f, type: 3}
     - target: {fileID: 4018084684508648529, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_text
       value: 'Undead Archer
@@ -1984,6 +1988,14 @@ PrefabInstance:
     - target: {fileID: 2998628683585716681, guid: e9796b96c7d258741b806cc763d4c437, type: 3}
       propertyPath: _arrowPrefab
       value: 
+      objectReference: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
+    - target: {fileID: 2998628683585716681, guid: e9796b96c7d258741b806cc763d4c437, type: 3}
+      propertyPath: _attackPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998628683585716681, guid: e9796b96c7d258741b806cc763d4c437, type: 3}
+      propertyPath: _respawnTime
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
