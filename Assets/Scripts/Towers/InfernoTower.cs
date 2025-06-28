@@ -23,7 +23,7 @@ public class InfernoTower : Tower
         StopLaser();
         FindTarget();
         DamageTarget();
-        Debug.Log(_canFindNextTarget);
+
     }
 
     private void UpdateTargetinCooldown() {
