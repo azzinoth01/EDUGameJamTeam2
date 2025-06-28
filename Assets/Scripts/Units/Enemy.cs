@@ -69,10 +69,21 @@ public class Enemy : Unit
     private void Update() {
         ShootArrow();
         if(_attackTarget != null) {
+            if(_speedWhileAttacking == 0f) {
+                _animate.Pause();
+            }
+            float normalizedTime = _animate.NormalizedTime;
             _animate.MaxSpeed = _speedWhileAttacking;
+            _animate.NormalizedTime = normalizedTime;
         }
         else {
+
+            float normalizedTime = _animate.NormalizedTime;
             _animate.MaxSpeed = _moveSpeed;
+            _animate.NormalizedTime = normalizedTime;
+            if(_animate.IsPlaying == false) {
+                _animate.Play();
+            }
         }
     }
 
