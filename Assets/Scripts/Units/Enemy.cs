@@ -54,7 +54,7 @@ public class Enemy : Unit
 
 
     public bool IsDead() {
-        return _health <= 0;
+        return _currentHealth <= 0;
     }
 
     // Freeze (dondurma)

@@ -1,14 +1,26 @@
 using UnityEngine;
 
-public abstract class Unit : MonoBehaviour
+public abstract class Unit : MonoBehaviour, IHealth
 {
     [SerializeField] protected float _health;
+    protected float _currentHealth;
     [SerializeField] protected int _goldOnDeath;
 
+    public float Health {
+        get {
+            return _currentHealth = _health;
+        }
+    }
+
+    public float MaxHealth {
+        get {
+            return _health;
+        }
+    }
 
     public void TakeDamage(float damage) {
-        _health = _health - damage;
-        if(_health <= 0) {
+        _currentHealth = _currentHealth - damage;
+        if(_currentHealth <= 0) {
             Death();
         }
     }
@@ -16,5 +28,8 @@ public abstract class Unit : MonoBehaviour
     private void Death() {
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
         Destroy(gameObject);
+    }
+    protected virtual void Awake() {
+        _currentHealth = _health;
     }
 }

@@ -1,12 +1,24 @@
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public class Tower : MonoBehaviour, IHealth
 {
     [SerializeField] private int _goldOnDeath;
     [SerializeField] private int _baseHealth;
     private float _health;
     [SerializeField] private float _respawnTime;
     [SerializeField] protected float _attackPower;
+
+    public float Health {
+        get {
+            return _health;
+        }
+    }
+
+    public float MaxHealth {
+        get {
+            return _baseHealth;
+        }
+    }
 
     private void Awake() {
         _health = _baseHealth;
