@@ -125,7 +125,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.37
+  m_Radius: 1
 --- !u!114 &5344633844361609783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,9 +138,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244325f01ecb40439c9a0c349bc41a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  damagePerSecond: 5
-  damageIncreasePerSecond: 5
+  _goldOnDeath: 15
+  _baseHealth: 40
+  _health: 40
+  _respawnTime: 20
+  _attackPower: 0
+  range: 3
+  damagePerSecond: 1
+  damageIncreasePerSecond: 2
   laserRenderer: {fileID: 3281064815674894375}
 --- !u!120 &3281064815674894375
 LineRenderer:

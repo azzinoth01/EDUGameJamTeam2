@@ -124,7 +124,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.77
+  m_Radius: 1
 --- !u!114 &2998628683585716681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,9 +140,9 @@ MonoBehaviour:
   _goldOnDeath: 10
   _baseHealth: 30
   _health: 30
-  _respawnTime: 3
+  _respawnTime: 15
   _attackPower: 5
   _arrowPrefab: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   firePoint: {fileID: 400881447343345525}
   _fireRate: 1
-  range: 5
+  range: 3
