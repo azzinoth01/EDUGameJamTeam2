@@ -75,6 +75,7 @@ public class Enemy : Unit
             return;
         }
         _passedTimeShooting = _passedTimeShooting - _fireTime;
+
         SpawnArrow(_attackTarget);
     }
 
@@ -153,6 +154,9 @@ public class Enemy : Unit
 
     }
     private void SpawnArrow(Transform target) {
+        if(target == null) {
+            return;
+        }
 
         Arrow arrow = Instantiate(_arrow,transform.position,Quaternion.identity);
         arrow.SetTarget(target);

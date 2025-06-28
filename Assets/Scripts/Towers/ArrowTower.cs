@@ -24,6 +24,9 @@ public class ArrowTower : Tower
     }
 
     void Shoot() {
+        if(_arrowPrefab == null) {
+            return;
+        }
         Arrow arrow = Instantiate(_arrowPrefab,firePoint.position,Quaternion.identity);
         arrow.SetTarget(currentTarget.transform);
         arrow.Damage = _attackPower;
