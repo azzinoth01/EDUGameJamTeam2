@@ -9,7 +9,8 @@ public class ArcherEnemy : Enemy
     [SerializeField] private float _fireRate;
     private float _fireTime;
     private float _passedTimeShooting;
-    private Transform _attackTarget;
+
+    [SerializeField] private TowerInRangeDetection _towerInRangeDetection;
 
     public float FireRate {
         get {
@@ -32,8 +33,10 @@ public class ArcherEnemy : Enemy
 
 
     private void Update() {
-        ShootArrow();
-        if(_attackTarget != null) {
+        Transform attackTarget = _towerInRangeDetection.GetFirstTower()?.transform;
+        ShootArrow(attackTarget);
+
+        if(attackTarget != null) {
             if(_speedWhileAttacking == 0f) {
                 _animate.Pause();
             }
@@ -53,45 +56,18 @@ public class ArcherEnemy : Enemy
     }
 
 
-    private void ShootArrow() {
+    private void ShootArrow(Transform target) {
         _passedTimeShooting = _passedTimeShooting + Time.deltaTime;
         if(_fireTime > _passedTimeShooting) {
             return;
         }
         _passedTimeShooting = _passedTimeShooting - _fireTime;
 
-        SpawnArrow(_attackTarget);
-    }
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if(_arrow == null) {
-            return;
-        }
-        _attackTarget = collision.gameObject.transform;
-    }
-
-    private void OnTriggerStay2D(Collider2D collision) {
-        if(_arrow == null) {
-            return;
-        }
-        if(_attackTarget == null) {
-            _attackTarget = collision.gameObject.transform;
-        }
-        if(_attackTarget.TryGetComponent(out Tower tower)) {
-            if(tower.IsAlive()) {
-                return;
-            }
-            else {
-                _attackTarget = collision.gameObject.transform;
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision) {
-        _attackTarget = null;
+        SpawnArrow(target);
     }
 
     private void SpawnArrow(Transform target) {
-        if(target == null) {
+        if(target == null || _arrow == null) {
             return;
         }
 

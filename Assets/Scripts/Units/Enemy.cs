@@ -42,7 +42,7 @@ public class Enemy : Unit
 
     private void OnCollisionEnter2D(Collision2D collision) {
         GameObject collisionGameObject = collision.collider.gameObject;
-        if(collisionGameObject.TryGetComponent(out Tower unit)) {
+        if(collisionGameObject.TryGetComponent(out Base unit)) {
             unit.TakeDamage(_damageToThrone);
             float lenght = _animate.Container.Spline.GetLength();
             float lerp = _pushBackDistanceOnCollison / lenght;
