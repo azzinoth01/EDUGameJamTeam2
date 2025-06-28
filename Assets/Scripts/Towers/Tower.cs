@@ -4,7 +4,7 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] private int _goldOnDeath;
     [SerializeField] private int _baseHealth;
-    [SerializeField] private float _health;
+    private float _health;
     [SerializeField] private float _respawnTime;
     [SerializeField] protected float _attackPower;
 

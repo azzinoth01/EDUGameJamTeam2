@@ -10,6 +10,7 @@ public class Enemy : Unit
     private SplineAnimate _animate;
 
     [SerializeField] private float _moveSpeed = 3f;
+    [SerializeField] private float _speedWhileAttacking;
 
     [SerializeField] private int _spawnCost;
 
@@ -67,6 +68,12 @@ public class Enemy : Unit
 
     private void Update() {
         ShootArrow();
+        if(_attackTarget != null) {
+            _animate.MaxSpeed = _speedWhileAttacking;
+        }
+        else {
+            _animate.MaxSpeed = _moveSpeed;
+        }
     }
 
     private void ShootArrow() {
