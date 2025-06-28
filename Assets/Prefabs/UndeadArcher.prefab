@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: m_Name
-      value: Enemy2
+      value: UndeadArcher
       objectReference: {fileID: 0}
     - target: {fileID: 3526287016018566720, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: m_Color.b
@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3583562859338263134, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _unit
+      value: 
+      objectReference: {fileID: 8229263260682560102}
     - target: {fileID: 4665550070780585500, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -77,11 +81,104 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
-      propertyPath: _moveSpeed
+      propertyPath: _health
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _moveSpeed
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _spawnCost
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _goldOnDeath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _attackDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _speedWhileAttacking
+      value: 0.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 8229263260682560102}
+    - targetCorrespondingSourceObject: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 577581708162319149}
   m_SourcePrefab: {fileID: 100100000, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+--- !u!1 &3146429189526742476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+  m_PrefabInstance: {fileID: 2749951264645713856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8229263260682560102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146429189526742476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa8c00ae94701c4faa605ede20e909a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 5
+  _goldOnDeath: 0
+  _moveSpeed: 1.1
+  _spawnCost: 3
+  _damageToThrone: 1
+  _attackDamage: 2
+  _speedWhileAttacking: 0.5
+  _arrow: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
+  _fireRate: 1
+--- !u!58 &577581708162319149
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146429189526742476}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 2.5

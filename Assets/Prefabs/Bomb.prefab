@@ -51,7 +51,7 @@ MonoBehaviour:
   damage: 30
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   explosionEffect: {fileID: 0}
 --- !u!212 &1138581288333049047
 SpriteRenderer:

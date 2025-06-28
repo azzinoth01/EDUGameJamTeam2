@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class ArrowTower : MonoBehaviour
+public class ArrowTower : Tower
 {
-    public GameObject arrow;
-    public Transform Tower;
-    public float fireRate = 1f;
+    public Arrow _arrowPrefab;
+    public Transform firePoint;
+    public float _fireRate = 1f;
     public float range = 5f;
     public Transform baseTarget;
 
@@ -13,14 +13,11 @@ public class ArrowTower : MonoBehaviour
     private float deadWait = 0f;
     public float waitTimeAfterKill = 1f;
 
-    void Update()
-    {
+    protected virtual void Update() {
         fireCD -= Time.deltaTime;
 
-        if (target == null || target.IsDead() || !IsInRange(target))
-        {
-            if (deadWait > 0)
-            {
+        if(target == null || target.IsDead() || !IsInRange(target)) {
+            if(deadWait > 0) {
                 deadWait -= Time.deltaTime;
                 return;
             }
@@ -28,47 +25,43 @@ public class ArrowTower : MonoBehaviour
             FindTarget();
         }
 
-        if (target != null && fireCD <= 0f)
-        {
+        if(target != null && fireCD <= 0f) {
             Shoot();
-            fireCD = 1f / fireRate;
+            fireCD = 1f / _fireRate;
 
-            if (target.IsDead())
+            if(target.IsDead())
                 deadWait = waitTimeAfterKill;
         }
     }
 
-    void Shoot()
-    {
-        if (arrow == null || target == null) return;
-
-        GameObject spawnedArrow = Instantiate(arrow, Tower.position, Quaternion.identity);
-        spawnedArrow.GetComponent<Arrow>().SetTarget(target.transform);
+    void Shoot() {
+        if(_arrowPrefab == null || target == null) {
+            return;
+        }
+        Arrow arrow = Instantiate(_arrowPrefab,firePoint.position,Quaternion.identity);
+        arrow.SetTarget(target.transform);
+        arrow.Damage = _attackPower;
     }
 
-    void FindTarget()
-    {
+    bool IsInRange(Enemy enemy) {
+        return Vector2.Distance(transform.position,enemy.transform.position) <= range;
+    }
+
+    void FindTarget() {
         Enemy[] allEnemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
         float nearestToBase = Mathf.Infinity;
         Enemy chosen = null;
 
-        foreach (Enemy e in allEnemies)
-        {
-            float distToBase = Vector2.Distance(e.transform.position, baseTarget.position);
-            float distToMe = Vector2.Distance(transform.position, e.transform.position);
+        foreach(Enemy e in allEnemies) {
+            float distToBase = Vector2.Distance(e.transform.position,baseTarget.position);
+            float distToMe = Vector2.Distance(transform.position,e.transform.position);
 
-            if (distToMe <= range && distToBase < nearestToBase)
-            {
+            if(distToMe <= range && distToBase < nearestToBase) {
                 nearestToBase = distToBase;
                 chosen = e;
             }
         }
 
         target = chosen;
-    }
-
-    bool IsInRange(Enemy e)
-    {
-        return Vector2.Distance(transform.position, e.transform.position) <= range;
     }
 }
