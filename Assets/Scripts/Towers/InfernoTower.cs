@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class InfernoTower : Tower
 {
-    public float range = 5f;
     public float damagePerSecond = 5f;
     public float damageIncreasePerSecond = 2f;
     public float cdDuration = 1f;
@@ -67,9 +66,8 @@ public class InfernoTower : Tower
 
         foreach(var enemy in _rangeDetection.EnemiesInRange) {
             float distToBase = Vector2.Distance(enemy.transform.position,baseTarget.position);
-            float distToTower = Vector2.Distance(transform.position,enemy.transform.position);
 
-            if(distToBase < closestToBase && distToTower <= range) {
+            if(distToBase < closestToBase) {
                 closestToBase = distToBase;
                 mostAdvancedEnemy = enemy;
             }
