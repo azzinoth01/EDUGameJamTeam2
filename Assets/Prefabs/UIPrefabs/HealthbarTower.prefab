@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _barImage: {fileID: 5141697693317660713}
   _unit: {fileID: 0}
+  _barBackground: {fileID: 2581518962854262467}
 --- !u!1 &7439135106419450234
 GameObject:
   m_ObjectHideFlags: 0
