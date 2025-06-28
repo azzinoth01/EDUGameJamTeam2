@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -24,6 +25,10 @@ public class Enemy : Unit
         _animate.AnimationMethod = SplineAnimate.Method.Speed;
         _animate.MaxSpeed = _moveSpeed;
         originalSpeed = _moveSpeed;
+
+        SplineUtility.GetNearestPoint(_movePath.Spline,transform.position,out float3 position,out float distanceOnSpline);
+
+        _animate.StartOffset = distanceOnSpline;
 
         _animate.Play();
     }
