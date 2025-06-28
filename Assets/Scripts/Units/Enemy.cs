@@ -16,19 +16,13 @@ public class Enemy : Unit
     [SerializeField] private int _damageToThrone;
     [SerializeField] protected int _attackDamage;
 
-
-    private float originalSpeed;
-
-    private Coroutine slowRoutine;
-    private Coroutine freezeRoutine;
+    [SerializeField] float _pushBackDistanceOnCollison;
 
     public int SpawnCost {
         get {
             return _spawnCost;
         }
     }
-
-
 
     protected virtual void Start() {
         _movePath = GameInstance.Instance.MovePaths.GetRandomMovePath();
@@ -37,7 +31,6 @@ public class Enemy : Unit
 
         _animate.AnimationMethod = SplineAnimate.Method.Speed;
         _animate.MaxSpeed = _moveSpeed;
-        originalSpeed = _moveSpeed;
 
         SplineUtility.GetNearestPoint(_movePath.Spline,transform.position,out float3 position,out float distanceOnSpline);
 
@@ -49,9 +42,12 @@ public class Enemy : Unit
 
     private void OnCollisionEnter2D(Collision2D collision) {
         GameObject collisionGameObject = collision.collider.gameObject;
-        if(collisionGameObject.TryGetComponent(out Tower unit)) {
+        if(collisionGameObject.TryGetComponent(out Base unit)) {
             unit.TakeDamage(_damageToThrone);
-            Destroy(gameObject);
+            float lenght = _animate.Container.Spline.GetLength();
+            float lerp = _pushBackDistanceOnCollison / lenght;
+            _animate.NormalizedTime = _animate.NormalizedTime - lerp;
+
         }
     }
 
