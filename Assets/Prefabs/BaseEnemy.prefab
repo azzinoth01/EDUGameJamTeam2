@@ -111,6 +111,8 @@ MonoBehaviour:
   _spawnCost: 0
   _damageToThrone: 1
   _attackDamage: 0
+  _pushBackDistanceOnCollison: 3
+  _pushBackDuration: 1
 --- !u!114 &4897730255028671574
 MonoBehaviour:
   m_ObjectHideFlags: 0

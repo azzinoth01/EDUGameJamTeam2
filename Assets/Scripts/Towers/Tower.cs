@@ -48,7 +48,9 @@ public class Tower : MonoBehaviour, IHealth
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
 
         gameObject.SetActive(false);
-        _cooldownHandler.StartCooldown(_respawnTime,this);
+        if(_cooldownHandler != null) {
+            _cooldownHandler.StartCooldown(_respawnTime,this);
+        }
 
     }
     public virtual void Respawn() {

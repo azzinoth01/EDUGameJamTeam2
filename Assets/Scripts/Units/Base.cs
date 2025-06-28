@@ -21,6 +21,7 @@ public class Base : ArrowTower
         _passedTime = _passedTime + Time.deltaTime;
         if(_passedTime >= _regenTime) {
             HealDamage(_regenHealth);
+            _passedTime = _passedTime - _regenTime;
         }
     }
 }

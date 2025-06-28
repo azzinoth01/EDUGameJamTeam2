@@ -32,7 +32,11 @@ public class ArcherEnemy : Enemy
 
 
 
-    private void Update() {
+    protected override void Update() {
+        base.Update();
+        if(_pushBackOnSpline) {
+            return;
+        }
         Transform attackTarget = _towerInRangeDetection.GetFirstTower()?.transform;
         ShootArrow(attackTarget);
 
