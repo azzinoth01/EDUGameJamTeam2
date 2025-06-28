@@ -43,16 +43,16 @@ public class Tower : MonoBehaviour, IHealth
     public bool IsAlive() {
         return _health > 0;
     }
-    protected virtual void Death() {
+    protected virtual void Death()
+    {
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
-        gameObject.SetActive(false);
-        GameInstance.Instance.RespawnHandler.RespawnTower(this,_respawnTime);
+        CooldownHandler cooldown = GetComponent<CooldownHandler>();
+        cooldown.StartCooldown();
+        
     }
-
-    public void Respawn() {
+    public virtual void Respawn()
+    {
         _health = _baseHealth;
         gameObject.SetActive(true);
     }
-
-
 }
