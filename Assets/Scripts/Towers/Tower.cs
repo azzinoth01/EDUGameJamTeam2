@@ -34,6 +34,12 @@ public class Tower : MonoBehaviour, IHealth
             Death();
         }
     }
+    public void HealDamage(float heal) {
+        _health = _health + heal;
+        if(_health >= _baseHealth) {
+            _health = _baseHealth;
+        }
+    }
     public bool IsAlive() {
         return _health > 0;
     }

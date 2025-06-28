@@ -10,7 +10,7 @@ public class ArrowTower : Tower
     private float _fireCooldown = 0f;
     private Enemy currentTarget;
 
-    void Update() {
+    protected virtual void Update() {
         _fireCooldown -= Time.deltaTime;
 
         if(currentTarget == null || !IsInRange(currentTarget)) {
