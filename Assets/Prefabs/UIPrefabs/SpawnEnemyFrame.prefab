@@ -86,6 +86,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3136428288436073679}
     m_Modifications:
+    - target: {fileID: 198626977346896792, guid: e5bc5cc6b957e854e8dc0f981dfb5b47, type: 3}
+      propertyPath: _spawnCooldownInSeconds
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2470777610906313399, guid: e5bc5cc6b957e854e8dc0f981dfb5b47, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -192,6 +196,10 @@ PrefabInstance:
       propertyPath: _enemyType
       value: 
       objectReference: {fileID: 5528911589020466063, guid: 8a482a43b7563b44b82cd7cc19aa615f, type: 3}
+    - target: {fileID: 198626977346896792, guid: e5bc5cc6b957e854e8dc0f981dfb5b47, type: 3}
+      propertyPath: _spawnCooldownInSeconds
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 465551146751806145, guid: e5bc5cc6b957e854e8dc0f981dfb5b47, type: 3}
       propertyPath: m_text
       value: 'Enemy2
@@ -324,6 +332,10 @@ PrefabInstance:
       propertyPath: _enemyType
       value: 
       objectReference: {fileID: 4455397663118452320, guid: 713e931200716834aab17e9a0c6eabdf, type: 3}
+    - target: {fileID: 198626977346896792, guid: e5bc5cc6b957e854e8dc0f981dfb5b47, type: 3}
+      propertyPath: _spawnCooldownInSeconds
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 465551146751806145, guid: e5bc5cc6b957e854e8dc0f981dfb5b47, type: 3}
       propertyPath: m_text
       value: 'Enemy3

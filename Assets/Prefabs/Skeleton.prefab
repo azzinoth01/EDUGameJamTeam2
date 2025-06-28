@@ -54,15 +54,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _health
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _moveSpeed
-      value: 1.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _spawnCost
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _goldOnDeath
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

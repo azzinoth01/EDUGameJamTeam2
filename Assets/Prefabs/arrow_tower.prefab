@@ -137,10 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0502d264b821b74ea0e4b72f29a7612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 3
-  _baseHealth: 8
-  _respawnTime: 30
-  _attackPower: 1
+  _goldOnDeath: 10
+  _baseHealth: 30
+  _health: 30
+  _respawnTime: 3
+  _attackPower: 5
   _arrowPrefab: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   firePoint: {fileID: 400881447343345525}
   _fireRate: 1
