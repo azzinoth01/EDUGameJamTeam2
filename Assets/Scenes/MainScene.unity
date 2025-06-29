@@ -1221,7 +1221,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 400881447343345525, guid: e9796b96c7d258741b806cc763d4c437, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400881447343345525, guid: e9796b96c7d258741b806cc763d4c437, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3708,6 +3708,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2951185911216650468, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
+      propertyPath: _fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951185911216650468, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
       propertyPath: _winScreen
       value: 
       objectReference: {fileID: 3228261374207122103}
@@ -3715,6 +3719,14 @@ PrefabInstance:
       propertyPath: baseTarget
       value: 
       objectReference: {fileID: 1315013377}
+    - target: {fileID: 2951185911216650468, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
+      propertyPath: _baseHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2951185911216650468, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
+      propertyPath: _attackPower
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3931759516288045941, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.3
