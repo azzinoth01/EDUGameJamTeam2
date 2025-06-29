@@ -5,7 +5,7 @@ public class InfernoTower : Tower
     public float damagePerSecond = 5f;
     public float damageIncreasePerSecond = 2f;
     public float cdDuration = 1f;
-    public Transform baseTarget;
+
     private Enemy currentTarget;
     private float currentDamage;
     private float _targetCoolddownPassedTime = 0f;

@@ -5,7 +5,7 @@ public class ArrowTower : Tower
     public Arrow _arrowPrefab;
     public Transform firePoint;
     public float _fireRate = 1f;
-    public Transform baseTarget;
+
     private float fireCD = 0f;
     private Enemy target;
     private float deadWait = 0f;
