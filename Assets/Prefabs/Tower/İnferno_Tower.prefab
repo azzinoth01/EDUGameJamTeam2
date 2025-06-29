@@ -467,13 +467,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244325f01ecb40439c9a0c349bc41a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 150
+  _goldOnDeath: 120
   _baseHealth: 400
-  _respawnTime: 25
+  _respawnTime: 30
   _attackPower: 0
   _cooldownHandler: {fileID: 3714994780381368905}
   damagePerSecond: 1
-  damageIncreasePerSecond: 200
+  damageIncreasePerSecond: 100
   cdDuration: 0.5
   laserRenderer: {fileID: 3281064815674894375}
   baseTarget: {fileID: 0}

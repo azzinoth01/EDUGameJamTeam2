@@ -291,6 +291,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       insertIndex: 2
       addedObject: {fileID: 8229263260682560102}
+    - targetCorrespondingSourceObject: {fileID: 973787659823573516, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6845564691635702740}
   m_SourcePrefab: {fileID: 100100000, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
 --- !u!1 &3146429189526742476 stripped
 GameObject:
@@ -309,18 +312,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa8c00ae94701c4faa605ede20e909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
+  _health: 120
   _goldOnDeath: 0
-  _moveSpeed: 1.2
-  _spawnCost: 3
-  _damageToThrone: 1
-  _attackDamage: 2
-  _pushBackDistanceOnCollison: 1
+  _moveSpeed: 1
+  _spawnCost: 30
+  _damageToThrone: 0
+  _attackDamage: 15
+  _pushBackDistanceOnCollison: 3
   _pushBackDuration: 0.5
-  _speedWhileAttacking: 0.5
+  _speedWhileAttacking: 0.6
   _arrow: {fileID: 8767907170330862934, guid: 8afe1469a4c60a148adeed9d937a166e, type: 3}
   _fireRate: 1
   _towerInRangeDetection: {fileID: 8726610156882303414}
+  _animationController: {fileID: 6845564691635702740}
+--- !u!95 &6845564691635702740
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146429189526742476}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 630ba01dc747da5439fce7e8feadd314, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8613730859764211771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5882779247340744699, guid: 29e8282796389a74593fafc1009f4da0, type: 3}

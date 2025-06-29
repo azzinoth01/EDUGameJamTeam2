@@ -204,10 +204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0502d264b821b74ea0e4b72f29a7612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 150
+  _goldOnDeath: 100
   _baseHealth: 300
-  _respawnTime: 20
-  _attackPower: 30
+  _respawnTime: 25
+  _attackPower: 25
   _cooldownHandler: {fileID: 4695179119362420479}
   _arrowPrefab: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   firePoint: {fileID: 5700068122295253822}
@@ -607,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945934945703200168, guid: 9d4144dd6345ddc45907da95e4cd7d04, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2945934945703200168, guid: 9d4144dd6345ddc45907da95e4cd7d04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
