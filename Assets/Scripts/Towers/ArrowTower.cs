@@ -12,7 +12,6 @@ public class ArrowTower : Tower
     public float waitTimeAfterKill = 1f;
 
     [SerializeField] private EnemyInRangeDetection _rangeDetection;
-    [SerializeField] private Animator _animationController;
 
 
     protected virtual void Update() {

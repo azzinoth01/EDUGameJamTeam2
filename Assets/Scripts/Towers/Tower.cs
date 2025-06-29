@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour, IHealth
     [SerializeField] private float _respawnTime;
     [SerializeField] protected float _attackPower;
     [SerializeField] private CooldownHandler _cooldownHandler;
+    [SerializeField] protected Animator _animationController;
 
     public float Health {
         get {
@@ -46,6 +47,8 @@ public class Tower : MonoBehaviour, IHealth
     }
     protected virtual void Death() {
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
+        _animationController.SetBool("IsDead",true);
+
 
         gameObject.SetActive(false);
         if(_cooldownHandler != null) {
@@ -55,6 +58,7 @@ public class Tower : MonoBehaviour, IHealth
     }
     public virtual void Respawn() {
         _health = _baseHealth;
+        _animationController.SetBool("IsDead",false);
         gameObject.SetActive(true);
     }
 }
