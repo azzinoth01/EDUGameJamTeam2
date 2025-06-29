@@ -414,9 +414,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244325f01ecb40439c9a0c349bc41a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 120
+  _goldOnDeath: 150
   _baseHealth: 600
-  _respawnTime: 30
+  _respawnTime: 35
   _attackPower: 0
   _cooldownHandler: {fileID: 3714994780381368905}
   _animationController: {fileID: 4304867745374503317}
