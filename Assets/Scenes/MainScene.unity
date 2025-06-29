@@ -709,6 +709,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4471840608000324866, guid: 87a949161c74f47419718d5f21bdaabd, type: 3}
+      propertyPath: _startGold
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471840608000324866, guid: 87a949161c74f47419718d5f21bdaabd, type: 3}
+      propertyPath: _goldPerIncomeTick
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471840608000324866, guid: 87a949161c74f47419718d5f21bdaabd, type: 3}
+      propertyPath: _incomeTickTimeInSeconds
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7898885985322588862, guid: 87a949161c74f47419718d5f21bdaabd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1265,11 +1277,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2225610065177866848, guid: c70f7f1e3f12fcb40a7620fac8246988, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.2
+      value: -19.2
       objectReference: {fileID: 0}
     - target: {fileID: 2225610065177866848, guid: c70f7f1e3f12fcb40a7620fac8246988, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 2225610065177866848, guid: c70f7f1e3f12fcb40a7620fac8246988, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2232,6 +2244,7 @@ MonoBehaviour:
   _movePaths:
   - {fileID: 2083030655}
   - {fileID: 686940278}
+  - {fileID: 1802009949}
 --- !u!224 &1062765926 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3136428288436073679, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
@@ -2478,7 +2491,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.3773585, g: 0.16498075, b: 0, a: 1}
   m_FlipX: 0
@@ -3725,10 +3738,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2951185911216650468, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
-      propertyPath: _regenTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951185911216650468, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
       propertyPath: _winScreen
       value: 
       objectReference: {fileID: 3228261374207122103}
@@ -3736,14 +3745,6 @@ PrefabInstance:
       propertyPath: baseTarget
       value: 
       objectReference: {fileID: 1315013377}
-    - target: {fileID: 2951185911216650468, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
-      propertyPath: _baseHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2951185911216650468, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
-      propertyPath: _regenHealth
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3931759516288045941, guid: 801cfd71ff7bf3d4ca39ab80f7cb7a00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.3
@@ -3805,11 +3806,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnEnemyFrame
       objectReference: {fileID: 0}
+    - target: {fileID: 1861634878918150305, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
+      propertyPath: _spawnCooldownInSeconds
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2117124400114057720, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_text
       value: 'Skeleton
 
-        Cost 2'
+        Cost 10'
       objectReference: {fileID: 0}
     - target: {fileID: 3136428288436073679, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_Pivot.x
@@ -3895,17 +3900,25 @@ PrefabInstance:
       propertyPath: _enemyType
       value: 
       objectReference: {fileID: 8229263260682560102, guid: 8a482a43b7563b44b82cd7cc19aa615f, type: 3}
+    - target: {fileID: 3708512912943078664, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
+      propertyPath: _spawnCooldownInSeconds
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4018084684508648529, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_text
       value: 'Undead Archer
 
-        Cost 3'
+        Cost 30'
       objectReference: {fileID: 0}
     - target: {fileID: 4695439575958244215, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_text
       value: 'Giant Skeleton
 
-        Cost 4'
+        Cost 50'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016410791456653870, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
+      propertyPath: _spawnCooldownInSeconds
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

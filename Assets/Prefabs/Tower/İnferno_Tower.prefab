@@ -473,7 +473,7 @@ MonoBehaviour:
   _attackPower: 0
   _cooldownHandler: {fileID: 3714994780381368905}
   damagePerSecond: 1
-  damageIncreasePerSecond: 200
+  damageIncreasePerSecond: 100
   cdDuration: 0.5
   laserRenderer: {fileID: 3281064815674894375}
   baseTarget: {fileID: 0}
