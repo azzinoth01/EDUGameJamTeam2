@@ -180,6 +180,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _deadVisual
+      value: 
+      objectReference: {fileID: 4211438368037305773, guid: 5e13156a6d52a324eb63dccd63721c8e, type: 3}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _goldOnDeath
       value: 0
       objectReference: {fileID: 0}

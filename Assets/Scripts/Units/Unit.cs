@@ -6,6 +6,8 @@ public abstract class Unit : MonoBehaviour, IHealth
     protected float _currentHealth;
     [SerializeField] protected int _goldOnDeath;
 
+    [SerializeField] DespawnAfterTime _deadVisual;
+
     public float Health {
         get {
             return _currentHealth;
@@ -27,6 +29,9 @@ public abstract class Unit : MonoBehaviour, IHealth
 
     private void Death() {
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
+        if(_deadVisual != null) {
+            Instantiate(_deadVisual,transform.position,Quaternion.identity);
+        }
         Destroy(gameObject);
     }
     protected virtual void Awake() {
