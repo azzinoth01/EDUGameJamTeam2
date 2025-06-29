@@ -4,12 +4,6 @@ public class Arrow : MonoBehaviour
 {
     public float speed = 10f;
     private float _damage = 10f;
-    //public enum ArrowType
-    //{
-    //    Normal, Slow, Poison, Freeze
-    //}
-    //public ArrowType arrowType = ArrowType.Normal;
-
     private Transform _target;
 
     public float Damage {
@@ -33,6 +27,11 @@ public class Arrow : MonoBehaviour
         }
 
         Vector2 dir = _target.position - transform.position;
+
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward,dir);
+
+        transform.rotation = rotation;
+
         float moveDistance = speed * Time.deltaTime;
 
         if(dir.magnitude <= moveDistance) {
@@ -50,23 +49,6 @@ public class Arrow : MonoBehaviour
         else if(_target.TryGetComponent(out Tower unit)) {
             unit.TakeDamage(_damage);
         }
-
-
-        //switch(arrowType) {
-        //    case ArrowType.Slow:
-        //        enemy.Slow(0.5f,2f); // Hızı %50'ye düşür, 2 saniye boyunca
-        //        break;
-
-        //    case ArrowType.Poison:
-        //        StartCoroutine(ApplyPoison(enemy,2f,5f)); // 2 saniye boyunca her saniye 5 hasar
-        //        break;
-
-        //    case ArrowType.Freeze:
-        //        enemy.Freeze(0.5f); // 0.5 saniye dondur
-        //        break;
-        //}
-
-
         Destroy(gameObject);
     }
 }
