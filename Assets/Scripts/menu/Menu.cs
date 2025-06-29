@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
     public GameObject credit;
     public GameObject menu;
     public void StartGame() {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame() {
