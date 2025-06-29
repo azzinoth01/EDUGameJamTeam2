@@ -79,5 +79,16 @@ public class Enemy : Unit
         }
     }
 
+    public float GetDistanceToBase() {
+
+        float lenght = _animate.Container.Spline.GetLength();
+
+        float lerp = _animate.NormalizedTime;
+
+        float distance = (1 - lerp) * lenght;
+
+        return distance;
+    }
+
 
 }

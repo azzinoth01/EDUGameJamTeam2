@@ -42,7 +42,9 @@ public class InfernoTower : Tower
         if(cdDuration > _targetCoolddownPassedTime) {
             return;
         }
-        _animationController.SetBool("IsOverHeating",false);
+        if(_animationController != null) {
+            _animationController.SetBool("IsOverHeating",false);
+        }
         _canFindNextTarget = true;
         return;
     }
@@ -56,7 +58,9 @@ public class InfernoTower : Tower
             currentTarget = null;
             currentDamage = damagePerSecond;
             _targetCoolddownPassedTime = 0;
-            _animationController.SetBool("IsOverHeating",true);
+            if(_animationController != null) {
+                _animationController.SetBool("IsOverHeating",true);
+            }
             _canFindNextTarget = false;
         }
     }
@@ -80,7 +84,7 @@ public class InfernoTower : Tower
         foreach(var enemy in _rangeDetection.EnemiesInRange) {
             float distToBase = Vector2.Distance(enemy.transform.position,baseTarget.position);
 
-            if(distToBase < closestToBase) {
+            if(enemy.GetDistanceToBase() < closestToBase) {
                 closestToBase = distToBase;
                 mostAdvancedEnemy = enemy;
             }
@@ -93,7 +97,9 @@ public class InfernoTower : Tower
         if(currentTarget == null) {
             return;
         }
-        _animationController.SetBool("IsAttacking",true);
+        if(_animationController != null) {
+            _animationController.SetBool("IsAttacking",true);
+        }
         Vector2 dir = currentTarget.transform.position - _shootingPoint.position;
         float distance = dir.magnitude;
 
@@ -110,7 +116,9 @@ public class InfernoTower : Tower
 
     void StopDrawingLaser() {
         _laserSprite.gameObject.SetActive(false);
-        _animationController.SetBool("IsAttacking",false);
+        if(_animationController != null) {
+            _animationController.SetBool("IsAttacking",false);
+        }
 
     }
     protected override void Death() {
