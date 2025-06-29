@@ -550,7 +550,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3338749442709606003, guid: f66f9c1dd890343449f8c8b2e02275b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -819,7 +819,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3338749442709606003, guid: f66f9c1dd890343449f8c8b2e02275b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2930,7 +2930,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3338749442709606003, guid: f66f9c1dd890343449f8c8b2e02275b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3017,7 +3017,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3338749442709606003, guid: f66f9c1dd890343449f8c8b2e02275b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3453,6 +3453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 312821688751302887, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5011039401197235584, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3703,7 +3707,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1845936659
 RectTransform:
@@ -4343,10 +4347,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1823834542879197979, guid: 4be89c064141d7043afff96aea6e0963, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7383221070379786104, guid: d96423ede40394f4e9fd45f3733cd23e, type: 3}
     - target: {fileID: 3349739267800351918, guid: 4be89c064141d7043afff96aea6e0963, type: 3}
       propertyPath: m_Name
       value: WinScreenFrame
       objectReference: {fileID: 0}
+    - target: {fileID: 3349739267800351918, guid: 4be89c064141d7043afff96aea6e0963, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739438571808807512, guid: 4be89c064141d7043afff96aea6e0963, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739438571808807512, guid: 4be89c064141d7043afff96aea6e0963, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8180088476483452875, guid: cb701f80c8b88b743b5e699d9401ae8b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
