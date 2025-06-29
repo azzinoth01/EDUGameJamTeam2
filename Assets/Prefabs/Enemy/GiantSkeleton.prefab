@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GiantSkeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 2592482284692904389, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3526287016018566720, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: m_Color.b
       value: 0

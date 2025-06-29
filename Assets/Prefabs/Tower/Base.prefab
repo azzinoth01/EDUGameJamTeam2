@@ -284,6 +284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3931759516288045941}
     m_Modifications:
+    - target: {fileID: 2581518962854262467, guid: 9d4144dd6345ddc45907da95e4cd7d04, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1746448180223532418, guid: 76ba90da0ad2b7148bcaf1be00eea2d1, type: 3}
     - target: {fileID: 2891962887802360248, guid: 9d4144dd6345ddc45907da95e4cd7d04, type: 3}
       propertyPath: m_Name
       value: healthbar
@@ -354,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945934945703200168, guid: 9d4144dd6345ddc45907da95e4cd7d04, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.76
+      value: -0.679
       objectReference: {fileID: 0}
     - target: {fileID: 2945934945703200168, guid: 9d4144dd6345ddc45907da95e4cd7d04, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -368,6 +372,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5141697693317660713, guid: 9d4144dd6345ddc45907da95e4cd7d04, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3884552615021742003, guid: d6a0e67d26decba41b53400015870074, type: 3}
     - target: {fileID: 8046483798445953446, guid: 9d4144dd6345ddc45907da95e4cd7d04, type: 3}
       propertyPath: _unit
       value: 
