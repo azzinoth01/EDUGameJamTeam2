@@ -401,7 +401,7 @@ MonoBehaviour:
   cdDuration: 0.5
   baseTarget: {fileID: 0}
   _shootingPoint: {fileID: 4934836070485478285}
-  _laserSprite: {fileID: 8058458844063256079, guid: b4954fe4ae6699e469eff61b12b5079c, type: 3}
+  _laserSprite: {fileID: 1113785354721253960, guid: 55a32e1085bee0646a9655ef2e496a9a, type: 3}
   _rangeDetection: {fileID: 4093951622807091378}
 --- !u!61 &2418383643682159947
 BoxCollider2D:
