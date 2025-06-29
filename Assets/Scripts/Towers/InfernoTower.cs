@@ -5,15 +5,25 @@ public class InfernoTower : Tower
     public float damagePerSecond = 5f;
     public float damageIncreasePerSecond = 2f;
     public float cdDuration = 1f;
-    public LineRenderer laserRenderer;
     public Transform baseTarget;
     private Enemy currentTarget;
     private float currentDamage;
     private float _targetCoolddownPassedTime = 0f;
 
+    [SerializeField] private Transform _shootingPoint;
+
+    [SerializeField] private SpriteRenderer _laserSprite;
+
     [SerializeField] private EnemyInRangeDetection _rangeDetection;
 
     private bool _canFindNextTarget = true;
+
+    protected override void Awake() {
+        base.Awake();
+        _laserSprite = Instantiate(_laserSprite);
+        _laserSprite.gameObject.SetActive(false);
+    }
+
 
     void Update() {
         if(currentTarget != null) {
@@ -76,16 +86,28 @@ public class InfernoTower : Tower
         currentTarget = mostAdvancedEnemy;
     }
     void DrawLaser() {
-        if(laserRenderer != null && currentTarget != null) {
-            laserRenderer.enabled = true;
-            laserRenderer.SetPosition(0,transform.position);
-            laserRenderer.SetPosition(1,currentTarget.transform.position);
+
+        if(currentTarget == null) {
+            return;
         }
+
+        Vector2 dir = currentTarget.transform.position - _shootingPoint.position;
+        float distance = dir.magnitude;
+
+        Vector2 spritePosition = Vector2.Lerp(currentTarget.transform.position,_shootingPoint.position,0.5f);
+        _laserSprite.transform.position = spritePosition;
+
+        Quaternion rotation = Quaternion.LookRotation(Vector3.forward,dir.normalized);
+        _laserSprite.transform.rotation = rotation;
+
+        Vector3 scale = _laserSprite.transform.localScale;
+        _laserSprite.transform.localScale = new Vector3(scale.x,distance,scale.z);
+        _laserSprite.gameObject.SetActive(true);
     }
 
     void StopDrawingLaser() {
-        if(laserRenderer != null)
-            laserRenderer.enabled = false;
+        _laserSprite.gameObject.SetActive(false);
+
     }
     protected override void Death() {
         base.Death();
