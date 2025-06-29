@@ -421,8 +421,8 @@ MonoBehaviour:
   _cooldownHandler: {fileID: 3714994780381368905}
   _animationController: {fileID: 4304867745374503317}
   damagePerSecond: 1
-  damageIncreasePerSecond: 100
-  cdDuration: 0.5
+  damageIncreasePerSecond: 125
+  cdDuration: 0.75
   baseTarget: {fileID: 0}
   _shootingPoint: {fileID: 4934836070485478285}
   _laserSprite: {fileID: 1113785354721253960, guid: 55a32e1085bee0646a9655ef2e496a9a, type: 3}
