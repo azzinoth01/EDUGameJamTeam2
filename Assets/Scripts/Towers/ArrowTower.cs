@@ -12,6 +12,7 @@ public class ArrowTower : Tower
     public float waitTimeAfterKill = 1f;
 
     [SerializeField] private EnemyInRangeDetection _rangeDetection;
+    [SerializeField] private Animator _animationController;
 
 
     protected virtual void Update() {
@@ -39,6 +40,7 @@ public class ArrowTower : Tower
         if(_arrowPrefab == null || target == null) {
             return;
         }
+        _animationController.SetTrigger("Shoot");
         Arrow arrow = Instantiate(_arrowPrefab,firePoint.position,Quaternion.identity);
         arrow.SetTarget(target.transform);
         arrow.Damage = _attackPower;
