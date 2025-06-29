@@ -762,7 +762,7 @@ Transform:
   m_GameObject: {fileID: 519530904}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -306.3, y: -491.3, z: -5101.816}
+  m_LocalPosition: {x: -333.8, y: -491.3, z: -5101.816}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2618,7 +2618,7 @@ Transform:
   m_GameObject: {fileID: 1386610265}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -547.4, y: -492, z: -5101.816}
+  m_LocalPosition: {x: -574.7, y: -492, z: -5101.816}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2705,7 +2705,7 @@ Transform:
   m_GameObject: {fileID: 1697381562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -776, y: -491.3, z: -5101.816}
+  m_LocalPosition: {x: -803.8, y: -491.3, z: -5101.816}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4346,7 +4346,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Skeleton
 
-        Cost 10'
+        10'
       objectReference: {fileID: 0}
     - target: {fileID: 3136428288436073679, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_Pivot.x
@@ -4440,7 +4440,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Undead Archer
 
-        Cost 30'
+        30'
       objectReference: {fileID: 0}
     - target: {fileID: 4133607387317250446, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4450,7 +4450,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Giant Skeleton
 
-        Cost 50'
+        50'
       objectReference: {fileID: 0}
     - target: {fileID: 5016410791456653870, guid: 53ceae9225b77fb478440553a75a1fda, type: 3}
       propertyPath: _spawnCooldownInSeconds
