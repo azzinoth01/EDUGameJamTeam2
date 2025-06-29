@@ -314,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 120
   _goldOnDeath: 0
+  _deadVisual: {fileID: 1116035076091903989, guid: 44beb82cc9ea2bb458179c878ac4dd97, type: 3}
   _moveSpeed: 1
   _spawnCost: 30
   _damageToThrone: 0
