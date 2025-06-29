@@ -315,8 +315,8 @@ MonoBehaviour:
   _spawnCost: 3
   _damageToThrone: 1
   _attackDamage: 2
-  _pushBackDistanceOnCollison: 3
-  _pushBackDuration: 1
+  _pushBackDistanceOnCollison: 1
+  _pushBackDuration: 0.5
   _speedWhileAttacking: 0.5
   _arrow: {fileID: 8767907170330862934, guid: 8afe1469a4c60a148adeed9d937a166e, type: 3}
   _fireRate: 1
