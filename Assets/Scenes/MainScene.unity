@@ -4238,25 +4238,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barracks
       objectReference: {fileID: 0}
+    - target: {fileID: 4785909444342614034, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6421930153677507754, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.15
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 6421930153677507754, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 6421930153677507754, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 6421930153677507754, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.057
+      value: -16.382
       objectReference: {fileID: 0}
     - target: {fileID: 6421930153677507754, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.137
+      value: 2.895
       objectReference: {fileID: 0}
     - target: {fileID: 6421930153677507754, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4289,6 +4293,18 @@ PrefabInstance:
     - target: {fileID: 6421930153677507754, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767339775410140753, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604167504918698021, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604167504918698021, guid: 6ce30f85f99c747409f7e63d85fb62b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
