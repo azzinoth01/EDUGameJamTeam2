@@ -21,7 +21,7 @@ public class Tower : MonoBehaviour, IHealth
         }
     }
 
-    private void Awake() {
+    protected virtual void Awake() {
         _health = _baseHealth;
     }
 
