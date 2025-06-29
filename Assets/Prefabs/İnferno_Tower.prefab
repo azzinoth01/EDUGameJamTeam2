@@ -312,11 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4827d1ba90a1864ab5358d30f184032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerScript: {fileID: 7652928322245143484}
   cooldownFillImage: {fileID: 8519393042659005096}
   cdfillimage: {fileID: 5510687838320398254}
   hpBar: {fileID: 4585838782605392267}
-  cooldownDuration: 5
 --- !u!1 &6117020814630552739
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,13 +435,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244325f01ecb40439c9a0c349bc41a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 15
-  _baseHealth: 40
+  _goldOnDeath: 150
+  _baseHealth: 400
   _respawnTime: 25
   _attackPower: 0
   _cooldownHandler: {fileID: 3714994780381368905}
   damagePerSecond: 1
-  damageIncreasePerSecond: 20
+  damageIncreasePerSecond: 200
   cdDuration: 0.5
   laserRenderer: {fileID: 3281064815674894375}
   baseTarget: {fileID: 0}

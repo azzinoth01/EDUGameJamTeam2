@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _health
-      value: 12
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _moveSpeed
@@ -62,11 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _spawnCost
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _goldOnDeath
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
+      propertyPath: _damageToThrone
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7679598136180012111, guid: 29e8282796389a74593fafc1009f4da0, type: 3}
       propertyPath: _pushBackDuration

@@ -150,9 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _goldOnDeath: 0
-  _baseHealth: 20
+  _baseHealth: 500
   _respawnTime: 100
   _attackPower: 2
+  _cooldownHandler: {fileID: 0}
   _arrowPrefab: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   firePoint: {fileID: 3931759516288045941}
   _fireRate: 1
@@ -160,8 +161,8 @@ MonoBehaviour:
   waitTimeAfterKill: 1
   _rangeDetection: {fileID: 4722718423459082318}
   _winScreen: {fileID: 0}
-  _regenHealth: 0
-  _regenTime: 0
+  _regenHealth: 10
+  _regenTime: 1
 --- !u!1 &8355147106402490440
 GameObject:
   m_ObjectHideFlags: 0

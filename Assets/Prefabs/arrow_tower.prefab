@@ -179,11 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4827d1ba90a1864ab5358d30f184032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerScript: {fileID: 4398923448233275148}
   cooldownFillImage: {fileID: 6537290667356086381}
   cdfillimage: {fileID: 138574448701365117}
   hpBar: {fileID: 7304734539544341988}
-  cooldownDuration: 5
 --- !u!1 &2450027019449379523
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,10 +227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0502d264b821b74ea0e4b72f29a7612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 15
-  _baseHealth: 30
+  _goldOnDeath: 150
+  _baseHealth: 300
   _respawnTime: 20
-  _attackPower: 3
+  _attackPower: 30
   _cooldownHandler: {fileID: 4695179119362420479}
   _arrowPrefab: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   firePoint: {fileID: 400881447343345525}

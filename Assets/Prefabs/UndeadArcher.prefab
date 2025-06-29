@@ -218,17 +218,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa8c00ae94701c4faa605ede20e909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
+  _health: 100
   _goldOnDeath: 0
   _moveSpeed: 1.2
-  _spawnCost: 3
-  _damageToThrone: 1
-  _attackDamage: 2
+  _spawnCost: 30
+  _damageToThrone: 10
+  _attackDamage: 10
   _pushBackDistanceOnCollison: 1
   _pushBackDuration: 0.5
-  _speedWhileAttacking: 0.5
+  _speedWhileAttacking: 0.4
   _arrow: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
-  _fireRate: 1
+  _fireRate: 1.5
   _towerInRangeDetection: {fileID: 8726610156882303414}
 --- !u!4 &8613730859764211771 stripped
 Transform:
