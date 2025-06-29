@@ -82,9 +82,9 @@ public class InfernoTower : Tower
         Enemy mostAdvancedEnemy = null;
 
         foreach(var enemy in _rangeDetection.EnemiesInRange) {
-            float distToBase = Vector2.Distance(enemy.transform.position,baseTarget.position);
+            float distToBase = enemy.GetDistanceToBase();
 
-            if(enemy.GetDistanceToBase() < closestToBase) {
+            if(distToBase < closestToBase) {
                 closestToBase = distToBase;
                 mostAdvancedEnemy = enemy;
             }

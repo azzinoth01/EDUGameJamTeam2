@@ -53,10 +53,9 @@ public class ArrowTower : Tower
         Enemy chosen = null;
 
         foreach(Enemy enemy in _rangeDetection.EnemiesInRange) {
-            float distToBase = Vector2.Distance(e.transform.position,baseTarget.position);
+            float distToBase = enemy.GetDistanceToBase();
 
-
-            if(enemy.GetDistanceToBase() < nearestToBase) {
+            if(distToBase < nearestToBase) {
                 nearestToBase = distToBase;
                 chosen = enemy;
             }
