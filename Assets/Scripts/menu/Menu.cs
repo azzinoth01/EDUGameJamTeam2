@@ -6,24 +6,19 @@ public class Menu : MonoBehaviour
 {
     public GameObject credit;
     public GameObject menu;
-    public void StartGame()
-    {
-        SceneManager.LoadScene("MainScene");
+    public void StartGame() {
+        SceneManager.LoadScene(2);
     }
 
-    public void QuitGame()
-    {
-        Debug.Log("Oyundan çıkılıyor...");
+    public void QuitGame() {
         Application.Quit();
     }
-    public void ShowCredits()
-    {
+    public void ShowCredits() {
         credit.SetActive(true);
         menu.SetActive(false);
     }
 
-    public void HideCredits()
-    {
+    public void HideCredits() {
         credit.SetActive(false);
         menu.SetActive(true);
     }
