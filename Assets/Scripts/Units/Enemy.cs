@@ -66,7 +66,6 @@ public class Enemy : Unit
         float lenght = _animate.Container.Spline.GetLength();
         float lerp = _pushBackDistanceOnCollison / lenght;
         _moveBackPerSecond = lerp / _pushBackDuration;
-        Debug.Log(_moveBackPerSecond);
     }
 
 
