@@ -31,7 +31,12 @@ public class Tower : MonoBehaviour, IHealth
     }
 
     public void TakeDamage(float damage) {
+
+        if(_health <= 0) {
+            return;
+        }
         _health = _health - damage;
+
         if(_health <= 0) {
             Death();
         }
