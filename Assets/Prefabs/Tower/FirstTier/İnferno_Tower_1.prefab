@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 6856727101809474734}
   - component: {fileID: 3714994780381368905}
   m_Layer: 0
-  m_Name: "\u0130nferno_Tower"
+  m_Name: "\u0130nferno_Tower_1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,14 +414,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244325f01ecb40439c9a0c349bc41a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 250
-  _baseHealth: 600
-  _respawnTime: 35
+  _goldOnDeath: 200
+  _baseHealth: 400
+  _respawnTime: 30
   _attackPower: 0
   _cooldownHandler: {fileID: 3714994780381368905}
   _animationController: {fileID: 4304867745374503317}
   damagePerSecond: 1
-  damageIncreasePerSecond: 125
+  damageIncreasePerSecond: 100
   cdDuration: 1
   baseTarget: {fileID: 0}
   _shootingPoint: {fileID: 4934836070485478285}

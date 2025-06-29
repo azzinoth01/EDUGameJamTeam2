@@ -204,10 +204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0502d264b821b74ea0e4b72f29a7612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 120
+  _goldOnDeath: 200
   _baseHealth: 300
-  _respawnTime: 25
-  _attackPower: 25
+  _respawnTime: 20
+  _attackPower: 20
   _cooldownHandler: {fileID: 4695179119362420479}
   _animationController: {fileID: 8212223159487112138}
   _arrowPrefab: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
