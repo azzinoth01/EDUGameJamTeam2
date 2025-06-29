@@ -15,6 +15,7 @@ public class InfernoTower : Tower
     [SerializeField] private SpriteRenderer _laserSprite;
 
     [SerializeField] private EnemyInRangeDetection _rangeDetection;
+    [SerializeField] private Animator _animationController;
 
     private bool _canFindNextTarget = true;
 
@@ -41,6 +42,7 @@ public class InfernoTower : Tower
         if(cdDuration > _targetCoolddownPassedTime) {
             return;
         }
+        _animationController.SetBool("IsOverHeating",false);
         _canFindNextTarget = true;
         return;
     }
@@ -54,6 +56,7 @@ public class InfernoTower : Tower
             currentTarget = null;
             currentDamage = damagePerSecond;
             _targetCoolddownPassedTime = 0;
+            _animationController.SetBool("IsOverHeating",true);
             _canFindNextTarget = false;
         }
     }
@@ -90,7 +93,7 @@ public class InfernoTower : Tower
         if(currentTarget == null) {
             return;
         }
-
+        _animationController.SetBool("IsAttacking",true);
         Vector2 dir = currentTarget.transform.position - _shootingPoint.position;
         float distance = dir.magnitude;
 
@@ -107,6 +110,7 @@ public class InfernoTower : Tower
 
     void StopDrawingLaser() {
         _laserSprite.gameObject.SetActive(false);
+        _animationController.SetBool("IsAttacking",false);
 
     }
     protected override void Death() {
