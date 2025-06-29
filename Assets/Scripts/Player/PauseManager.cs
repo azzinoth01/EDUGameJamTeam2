@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    public GameObject pauseCanvas; // Pause UI
-    public GameObject[] gameplayCanvasesToDisable; // Diğer UI'lar (envanter, skill, healthbar vs)
+    public GameObject pauseCanvas;
+    public GameObject[] gameplayCanvasesToDisable;
 
     private bool isPaused = false;
 
@@ -27,7 +27,7 @@ public class PauseManager : MonoBehaviour
 
         foreach (var ui in gameplayCanvasesToDisable)
         {
-            ui.SetActive(false); // Diğer UI’leri devre dışı bırak
+            ui.SetActive(false);
         }
     }
 
@@ -46,6 +46,6 @@ public class PauseManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(1); // Ana menü sahnesine dön
+        SceneManager.LoadScene(1);
     }
 }
