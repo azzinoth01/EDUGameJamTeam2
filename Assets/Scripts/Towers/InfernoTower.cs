@@ -15,7 +15,7 @@ public class InfernoTower : Tower
     [SerializeField] private SpriteRenderer _laserSprite;
 
     [SerializeField] private EnemyInRangeDetection _rangeDetection;
-    [SerializeField] private Animator _animationController;
+
 
     private bool _canFindNextTarget = true;
 

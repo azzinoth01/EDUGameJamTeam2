@@ -209,13 +209,13 @@ MonoBehaviour:
   _respawnTime: 25
   _attackPower: 25
   _cooldownHandler: {fileID: 4695179119362420479}
+  _animationController: {fileID: 8212223159487112138}
   _arrowPrefab: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   firePoint: {fileID: 5700068122295253822}
   _fireRate: 3
   baseTarget: {fileID: 0}
   waitTimeAfterKill: 1
   _rangeDetection: {fileID: 7391372378507513217}
-  _animationController: {fileID: 8212223159487112138}
 --- !u!61 &6413187663818069711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -408,7 +408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.009999752}
+  m_AnchoredPosition: {x: 0, y: -0.589}
   m_SizeDelta: {x: 0.7, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2673771224337945663
