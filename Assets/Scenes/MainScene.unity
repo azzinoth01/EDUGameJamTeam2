@@ -3184,6 +3184,18 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 2032935114679442054, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032935114679442054, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032935114679442054, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 145
+      objectReference: {fileID: 0}
     - target: {fileID: 3739762769390868755, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
       propertyPath: m_text
       value: Resume
@@ -3279,6 +3291,18 @@ PrefabInstance:
     - target: {fileID: 6866795347901060477, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545057040909977936, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545057040909977936, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545057040909977936, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -135
       objectReference: {fileID: 0}
     - target: {fileID: 8791131071071903685, guid: 832b8934da4df1148bbc7affe66c73cd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
