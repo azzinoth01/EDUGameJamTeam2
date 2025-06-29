@@ -11,6 +11,9 @@ public class ArcherEnemy : Enemy
     private float _passedTimeShooting;
 
     [SerializeField] private TowerInRangeDetection _towerInRangeDetection;
+    [SerializeField] private Animator _animationController;
+
+    private const string _shootAnimation = "Shoot";
 
     public float FireRate {
         get {
@@ -37,6 +40,9 @@ public class ArcherEnemy : Enemy
         if(_pushBackOnSpline) {
             return;
         }
+
+
+
         Transform attackTarget = _towerInRangeDetection.GetFirstTower()?.transform;
         ShootArrow(attackTarget);
 
@@ -74,7 +80,7 @@ public class ArcherEnemy : Enemy
         if(target == null || _arrow == null) {
             return;
         }
-
+        _animationController.SetTrigger(_shootAnimation);
         Arrow arrow = Instantiate(_arrow,transform.position,Quaternion.identity);
         arrow.SetTarget(target);
         arrow.Damage = _attackDamage;
