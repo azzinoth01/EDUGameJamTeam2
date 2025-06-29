@@ -5,7 +5,7 @@ public class ArrowTower : Tower
     public Arrow _arrowPrefab;
     public Transform firePoint;
     public float _fireRate = 1f;
-    public Transform baseTarget;
+
     private float fireCD = 0f;
     private Enemy target;
     private float deadWait = 0f;
@@ -39,7 +39,9 @@ public class ArrowTower : Tower
         if(_arrowPrefab == null || target == null) {
             return;
         }
-        _animationController.SetTrigger("Shoot");
+        if(_animationController != null) {
+            _animationController.SetTrigger("Shoot");
+        }
         Arrow arrow = Instantiate(_arrowPrefab,firePoint.position,Quaternion.identity);
         arrow.SetTarget(target.transform);
         arrow.Damage = _attackPower;
@@ -50,13 +52,12 @@ public class ArrowTower : Tower
         float nearestToBase = Mathf.Infinity;
         Enemy chosen = null;
 
-        foreach(Enemy e in _rangeDetection.EnemiesInRange) {
-            float distToBase = Vector2.Distance(e.transform.position,baseTarget.position);
-
+        foreach(Enemy enemy in _rangeDetection.EnemiesInRange) {
+            float distToBase = enemy.GetDistanceToBase();
 
             if(distToBase < nearestToBase) {
                 nearestToBase = distToBase;
-                chosen = e;
+                chosen = enemy;
             }
         }
 

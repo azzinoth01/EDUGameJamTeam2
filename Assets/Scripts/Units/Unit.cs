@@ -21,6 +21,9 @@ public abstract class Unit : MonoBehaviour, IHealth
     }
 
     public void TakeDamage(float damage) {
+        if(_health <= 0) {
+            return;
+        }
         _currentHealth = _currentHealth - damage;
         if(_currentHealth <= 0) {
             Death();

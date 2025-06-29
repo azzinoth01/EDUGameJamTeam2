@@ -31,7 +31,12 @@ public class Tower : MonoBehaviour, IHealth
     }
 
     public void TakeDamage(float damage) {
+
+        if(_health <= 0) {
+            return;
+        }
         _health = _health - damage;
+
         if(_health <= 0) {
             Death();
         }
@@ -47,8 +52,9 @@ public class Tower : MonoBehaviour, IHealth
     }
     protected virtual void Death() {
         GameInstance.Instance.Player.AddGold(_goldOnDeath);
-        _animationController.SetBool("IsDead",true);
-
+        if(_animationController != null) {
+            _animationController.SetBool("IsDead",true);
+        }
 
         gameObject.SetActive(false);
         if(_cooldownHandler != null) {
@@ -58,7 +64,9 @@ public class Tower : MonoBehaviour, IHealth
     }
     public virtual void Respawn() {
         _health = _baseHealth;
-        _animationController.SetBool("IsDead",false);
+        if(_animationController != null) {
+            _animationController.SetBool("IsDead",false);
+        }
         gameObject.SetActive(true);
     }
 }
