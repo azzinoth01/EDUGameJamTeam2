@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8ab9bccd8ed7a2d4fa71f9f0c5014cba
+guid: caa423771b81b8f4381697c2b6887944
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4867227932765936624
-    second: LaserTowerIdle_0
+      213: 4980785964405382756
+    second: ArcherTowerAttack 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LaserTowerIdle_0
+      name: ArcherTowerAttack 2_0
       rect:
         serializedVersion: 2
-        x: 460
+        x: 400
         y: 262
-        width: 1080
-        height: 1671
+        width: 1140
+        height: 1738
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 014a0aa9bf1247cb0800000000000000
-      internalID: -4867227932765936624
+      spriteID: 46e52aef17e4f1540800000000000000
+      internalID: 4980785964405382756
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LaserTowerIdle_0: -4867227932765936624
+      ArcherTowerAttack 2_0: 4980785964405382756
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

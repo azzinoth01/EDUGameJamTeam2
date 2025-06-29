@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7d77a4e2ad92c56439118f15c0fa653a
+guid: 8f8dafbb687782e49ba43f2f16687af1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4227032494633434797
-    second: ArcherTowerIdle_0
+      213: 6834718540025174288
+    second: ArcherTowerIdle 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ArcherTowerIdle_0
+      name: ArcherTowerIdle 2_0
       rect:
         serializedVersion: 2
         x: 460
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 351475787509655c0800000000000000
-      internalID: -4227032494633434797
+      spriteID: 0191afddc4cc9de50800000000000000
+      internalID: 6834718540025174288
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ArcherTowerIdle_0: -4227032494633434797
+      ArcherTowerIdle 2_0: 6834718540025174288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
