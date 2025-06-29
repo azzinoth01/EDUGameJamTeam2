@@ -207,7 +207,7 @@ MonoBehaviour:
   _goldOnDeath: 100
   _baseHealth: 300
   _respawnTime: 25
-  _attackPower: 30
+  _attackPower: 25
   _cooldownHandler: {fileID: 4695179119362420479}
   _arrowPrefab: {fileID: 8767907170330862934, guid: 75dcaca1b9f305545a117049a9f303b1, type: 3}
   firePoint: {fileID: 5700068122295253822}

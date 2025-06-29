@@ -314,13 +314,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 120
   _goldOnDeath: 0
-  _moveSpeed: 1.1
+  _moveSpeed: 1
   _spawnCost: 30
-  _damageToThrone: 10
-  _attackDamage: 20
-  _pushBackDistanceOnCollison: 1
+  _damageToThrone: 0
+  _attackDamage: 15
+  _pushBackDistanceOnCollison: 3
   _pushBackDuration: 0.5
-  _speedWhileAttacking: 0.4
+  _speedWhileAttacking: 0.6
   _arrow: {fileID: 8767907170330862934, guid: 8afe1469a4c60a148adeed9d937a166e, type: 3}
   _fireRate: 1
   _towerInRangeDetection: {fileID: 8726610156882303414}
