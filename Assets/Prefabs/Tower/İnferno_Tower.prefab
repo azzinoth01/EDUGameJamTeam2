@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b244325f01ecb40439c9a0c349bc41a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 150
+  _goldOnDeath: 180
   _baseHealth: 600
   _respawnTime: 35
   _attackPower: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   _animationController: {fileID: 4304867745374503317}
   damagePerSecond: 1
   damageIncreasePerSecond: 125
-  cdDuration: 0.75
+  cdDuration: 1
   baseTarget: {fileID: 0}
   _shootingPoint: {fileID: 4934836070485478285}
   _laserSprite: {fileID: 1113785354721253960, guid: 55a32e1085bee0646a9655ef2e496a9a, type: 3}

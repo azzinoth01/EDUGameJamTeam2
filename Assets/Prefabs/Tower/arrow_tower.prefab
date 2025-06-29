@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0502d264b821b74ea0e4b72f29a7612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldOnDeath: 100
+  _goldOnDeath: 120
   _baseHealth: 300
   _respawnTime: 25
   _attackPower: 25
